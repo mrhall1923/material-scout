@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Masonry Scout</title><style>:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--mute:#6a6863;--line:#dedbd4;--photo:#1f7a4a;--photobg:#e2f2e8;--gen:#8a5a00;--genbg:#fbefd6;--link:#1d5fa8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}}
+:root[data-theme="dark"]{--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 64px}a{color:var(--link)}
+h1{font-size:28px;margin:0 0 4px}.lede{color:var(--mute);margin:0 0 16px;max-width:75ch}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:24px}
+.toc{columns:3 220px;padding-left:20px;margin:8px 0 24px}.toc li{break-inside:avoid;margin:2px 0}.toc span{font-size:12px;padding:0 6px;border-radius:8px}.ok{background:var(--photobg);color:var(--photo)}.gn{background:var(--genbg);color:var(--gen)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 18px}
+.rh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}.rh h2{margin:0;font-size:20px}.num{color:var(--mute);font-variant-numeric:tabular-nums}.key{color:var(--mute);font-size:12px}
+.row{display:grid;grid-template-columns:220px 1fr;gap:18px}@media (max-width:720px){.row{grid-template-columns:1fr}}
+.cur{margin:0}.cur img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.cur figcaption{overflow-wrap:anywhere;font-size:13px;margin-top:6px;color:var(--mute)}.cur b{color:var(--ink)}.g{font-weight:600;color:var(--ink)}
+.note{margin:0 0 10px;font-size:14px}.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.p{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.p.is-gen{border-style:dashed;border-color:var(--gen)}
+.p img{width:100%;height:160px;object-fit:contain;background:#181818;display:block}.pb{padding:10px 12px}.pb h4{margin:6px 0 6px;font-size:16px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px}.tag.photo{background:var(--photobg);color:var(--photo)}.tag.gen{background:var(--genbg);color:var(--gen)}
+dl{display:grid;grid-template-columns:76px 1fr;gap:3px 8px;margin:0;font-size:12.5px}dt{color:var(--mute)}dd{margin:0;overflow-wrap:anywhere}
+.none{color:var(--mute);font-style:italic}footer{color:var(--mute);font-size:13px;margin-top:28px;max-width:85ch}
+.cur a{display:block;width:200px}.p>a{display:block}
+.tag.pick{background:var(--link);color:var(--card)}.p.is-pick{border:2px solid var(--link)}.pulled-status{margin:0 0 10px;font-size:14px}
+details.pulled{margin:28px 0 0;border-top:1px solid var(--line);padding-top:12px}details.pulled>summary{cursor:pointer;font-size:20px;font-weight:600;margin:0 0 12px;padding:6px 0}
+</style><meta name="robots" content="noindex"><style>
+.pub-bar{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;color:var(--mute)}
+.pub-bar a{font-weight:600}
+.pub-out{display:flex;align-items:center;justify-content:center;text-align:center;height:160px;padding:12px;background:var(--bg);color:var(--mute);font-size:13px;border-bottom:1px solid var(--line)}
+.cur .pub-out{width:200px;height:200px;border:1px dashed var(--mute);border-radius:8px}
+</style></head><body><main><p class="pub-bar"><a href="./">← All scout pages</a> · Public copy, published 2026-10-16 11:48. Poly Haven’s previews are not copied (their site pictures are not CC0); the offline 3D viewer stays on the owner’s machine.</p>
+<h1>Masonry scout — CC0 prospects</h1>
+<p class="lede">Every Masonry row that the 16 Oct material grid uses or proposes (<code>docs/plans/SURFACE_LIST-proposed-2026-10-16.md</code>, commit d770ab5c), with up to three CC0 prospects from Poly Haven and ambientCG. The first card in each row is the best fit. Real photos are preferred; a generated (computer-made) set is listed only when neither library has a photo of that look, and it is marked. Built 2026-10-16 by the <code>scout masonry</code> trigger, run read-only: nothing in the game or the records changed and nothing was downloaded at full size.</p>
+<p class="lede"><b>3D:</b> an ambientCG prospect's picture opens ambientCG's own 3D preview; a Poly Haven prospect's page has its 3D preview. Our offline viewer of the game's own maps is not on this public copy.</p>
+<div class="stats"><div class="stat"><b>3</b>rows scouted (of 16 looks in Masonry)</div><div class="stat"><b>1</b>with a real photo of the look</div><div class="stat"><b>2</b>with nothing real (weak fits, generated or none)</div><div class="stat"><b>9</b>prospects</div></div>
+<p class="lede">Left out — marked [UNUSED?] in the list (no grid cell uses them): Red brick, running bond, Red brick, stack bond, Red brick, herringbone, Red brick, soldier course, Brown / multi brick, Painted brick, Whitewashed brick, Concrete paver brick, Terracotta block, Adobe / mud brick, Mortar / grout only.</p>
+<ol class="toc"><li><a href="#masonry_glazed_brick">Glazed brick</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#masonry_cinder_block_cmu">Cinder block / CMU</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#masonry_split_face_block">Split-face block</a> <span class="ok">photo</span></li></ol>
+<section id="masonry_glazed_brick">
+<header class="rh"><span class="num">01</span><h2>Glazed brick</h2><code class="key">masonry_glazed_brick</code></header>
+<div class="row">
+<figure class="cur"><img src="masonry_files/current_masonry_glazed_brick.jpg" alt="current look of Glazed brick" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_masonry_glazed_brick.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No glazed brick in either library. Bricks072 is smooth yellow modern brick with some sheen; Bricks019 smooth pale brick; Tiles019 is small cyan glazed tiles laid like brick, the glaze at the wrong scale. All weak. ambientCG&#x27;s GlazedTerracotta sets are computer-made glaze with no bricks.</p><p class="note"><b>Route:</b> Material Maker is the likely route: a glaze is colour plus low roughness over a smooth brick. A recoloured Bricks072 with its roughness lowered would also do it.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Color.jpg?82657&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Displacement.jpg?72557&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_NormalDX.jpg?23789&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Roughness.jpg?54174&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_AmbientOcclusion.jpg?99590" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Bricks072.jpg" alt="Bricks 072" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Bricks072" target="_blank" rel="noopener">Bricks 072</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Bricks072</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.5 m × 75 cm (page)</dd>
+<dt>2K size</dt><dd>31 MB 2K-PNG zip · 12 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Bricks072" target="_blank" rel="noopener">https://ambientcg.com/a/Bricks072</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Color.jpg?82657&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Displacement.jpg?72557&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_NormalDX.jpg?23789&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_Roughness.jpg?54174&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks072/Bricks072_SQ_AmbientOcclusion.jpg?99590" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Color.jpg?36789&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Displacement.jpg?89007&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_NormalDX.jpg?62901&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Roughness.jpg?83644&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_AmbientOcclusion.jpg?72535" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Bricks019.jpg" alt="Bricks 019" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Bricks019" target="_blank" rel="noopener">Bricks 019</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Bricks019</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given</dd>
+<dt>2K size</dt><dd>59 MB 2K-PNG zip · 23 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Bricks019" target="_blank" rel="noopener">https://ambientcg.com/a/Bricks019</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Color.jpg?36789&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Displacement.jpg?89007&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_NormalDX.jpg?62901&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_Roughness.jpg?83644&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks019/Bricks019_SQ_AmbientOcclusion.jpg?72535" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Color.jpg?651&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Displacement.jpg?88436&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_NormalDX.jpg?77081&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Roughness.jpg?40676&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_AmbientOcclusion.jpg?62216" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Tiles019.jpg" alt="Tiles 019" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Tiles019" target="_blank" rel="noopener">Tiles 019</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Tiles019</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given</dd>
+<dt>2K size</dt><dd>57 MB 2K-PNG zip · 22 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Tiles019" target="_blank" rel="noopener">https://ambientcg.com/a/Tiles019</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Color.jpg?651&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Displacement.jpg?88436&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_NormalDX.jpg?77081&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Roughness.jpg?40676&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_AmbientOcclusion.jpg?62216" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="masonry_cinder_block_cmu">
+<header class="rh"><span class="num">02</span><h2>Cinder block / CMU</h2><code class="key">masonry_cinder_block_cmu</code></header>
+<div class="row">
+<figure class="cur"><img src="masonry_files/current_masonry_cinder_block_cmu.jpg" alt="current look of Cinder block / CMU" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_masonry_cinder_block_cmu.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No bare light-grey cinder block photo in either library. Bricks038 has a pitted pale block face in running bond; Bricks008 is a painted block wall; concrete_block_wall_03 is dark grey bevelled blocks. All weak. (The 10 Oct pick concrete_block_wall is carved stonework blocks, dropped.)</p><p class="note"><b>Route:</b> Material Maker is the likely route: 400 × 200 mm units, fine grey speckle and recessed joints; or Bricks038 recoloured grey.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Color.jpg?52706&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Displacement.jpg?74881&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_NormalDX.jpg?30071&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Roughness.jpg?95856&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_AmbientOcclusion.jpg?16732" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Bricks038.jpg" alt="Bricks 038" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Bricks038" target="_blank" rel="noopener">Bricks 038</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Bricks038</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.1 m × 1.1 m (page)</dd>
+<dt>2K size</dt><dd>65 MB 2K-PNG zip · 29 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Bricks038" target="_blank" rel="noopener">https://ambientcg.com/a/Bricks038</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Color.jpg?52706&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Displacement.jpg?74881&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_NormalDX.jpg?30071&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_Roughness.jpg?95856&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks038/Bricks038_SQ_AmbientOcclusion.jpg?16732" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Color.jpg?53453&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Displacement.jpg?13820&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_NormalDX.jpg?59309&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Roughness.jpg?17338&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_AmbientOcclusion.jpg?51414" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Bricks008.jpg" alt="Bricks 008" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Bricks008" target="_blank" rel="noopener">Bricks 008</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Bricks008</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.65 m × 1.65 m (page)</dd>
+<dt>2K size</dt><dd>60 MB 2K-PNG zip · 23 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Bricks008" target="_blank" rel="noopener">https://ambientcg.com/a/Bricks008</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Color.jpg?53453&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Displacement.jpg?13820&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_NormalDX.jpg?59309&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_Roughness.jpg?17338&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks008/Bricks008_SQ_AmbientOcclusion.jpg?51414" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_block_wall_03" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_block_wall_03" target="_blank" rel="noopener">Concrete Block Wall 03</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_block_wall_03</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.81 m × 1.81 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>73 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 11 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_block_wall_03" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_block_wall_03</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_block_wall_03" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="masonry_split_face_block">
+<header class="rh"><span class="num">03</span><h2>Split-face block</h2><code class="key">masonry_split_face_block</code></header>
+<div class="row">
+<figure class="cur"><img src="masonry_files/current_masonry_split_face_block.jpg" alt="current look of Split-face block" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_masonry_split_face_block.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">concrete_brick_wall_001 is real split-face block, rough faces in tan; Bricks084 beige rough-faced blocks; rough_block_wall darker cast-stone blocks.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/concrete_brick_wall_001" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_brick_wall_001" target="_blank" rel="noopener">Concrete Brick Wall 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_brick_wall_001</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 m × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>27 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 3.6 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva Photography; Rico Cilliers Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_brick_wall_001" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_brick_wall_001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_brick_wall_001" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Color.jpg?36469&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Displacement.jpg?71996&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_NormalDX.jpg?87130&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Roughness.jpg?11437&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_AmbientOcclusion.jpg?28312" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="masonry_files/acg_Bricks084.jpg" alt="Bricks 084" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Bricks084" target="_blank" rel="noopener">Bricks 084</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Bricks084</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given</dd>
+<dt>2K size</dt><dd>33 MB 2K-PNG zip · 15 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Bricks084" target="_blank" rel="noopener">https://ambientcg.com/a/Bricks084</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Color.jpg?36469&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Displacement.jpg?71996&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_NormalDX.jpg?87130&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_Roughness.jpg?11437&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Bricks084/Bricks084_SQ_AmbientOcclusion.jpg?28312" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/rough_block_wall" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rough_block_wall" target="_blank" rel="noopener">Rough Block Wall</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rough_block_wall</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3.04 m × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>86 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 9.0 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rough_block_wall" target="_blank" rel="noopener">https://polyhaven.com/a/rough_block_wall</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rough_block_wall" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section>
+<footer><p><b>How this was checked.</b> Prospects came from each library's full catalogue (Poly Haven: all textures; ambientCG: every material), chosen by eye from the thumbnails. The licence line was read from each prospect's own page, fetched again on 2026-10-16: every Poly Haven page shows “CC0 License” beside the author credit; every ambientCG page says “All assets are released under the Creative Commons CC0 license…”. A prospect whose page lacked the line would have been dropped. ambientCG's technique is copied from the page's <i>Technique</i> field (the site spells procedural “Prodedural”). Poly Haven pages have no technique field; its textures are scanned from real surfaces, and where credits name a photographer that is shown.</p>
+<p><b>Real size</b> is the area the photo covers. Poly Haven: the asset's own dimensions (its API), with the “… wide” figure its page prints. ambientCG: the page's <i>Dimensions</i> line; where the page gives none, the catalogue's figure, or “not given”. <b>2K size</b> is the download a pull would make: for Poly Haven the five 2K PNG maps <code>tools/surface_photos.py</code> fetches (colour, OpenGL normal, roughness, AO, ARM), with the JPG total beside it; for ambientCG the 2K-PNG zip that tool fetches, with the 2K-JPG zip beside it. Sizes are from the libraries' APIs; nothing was downloaded at full size.</p>
+<p>Thumbnails are the libraries' own small previews (256 px), stored beside this page in <code>masonry_files/</code>. Current-look thumbnails are 256 px copies of the game's colour picture.</p></footer>
+</main></body></html>

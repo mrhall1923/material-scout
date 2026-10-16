@@ -1,0 +1,332 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concrete Scout</title><style>:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--mute:#6a6863;--line:#dedbd4;--photo:#1f7a4a;--photobg:#e2f2e8;--gen:#8a5a00;--genbg:#fbefd6;--link:#1d5fa8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}}
+:root[data-theme="dark"]{--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 64px}a{color:var(--link)}
+h1{font-size:28px;margin:0 0 4px}.lede{color:var(--mute);margin:0 0 16px;max-width:75ch}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:24px}
+.toc{columns:3 220px;padding-left:20px;margin:8px 0 24px}.toc li{break-inside:avoid;margin:2px 0}.toc span{font-size:12px;padding:0 6px;border-radius:8px}.ok{background:var(--photobg);color:var(--photo)}.gn{background:var(--genbg);color:var(--gen)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 18px}
+.rh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}.rh h2{margin:0;font-size:20px}.num{color:var(--mute);font-variant-numeric:tabular-nums}.key{color:var(--mute);font-size:12px}
+.row{display:grid;grid-template-columns:220px 1fr;gap:18px}@media (max-width:720px){.row{grid-template-columns:1fr}}
+.cur{margin:0}.cur img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.cur figcaption{overflow-wrap:anywhere;font-size:13px;margin-top:6px;color:var(--mute)}.cur b{color:var(--ink)}.g{font-weight:600;color:var(--ink)}
+.note{margin:0 0 10px;font-size:14px}.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.p{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.p.is-gen{border-style:dashed;border-color:var(--gen)}
+.p img{width:100%;height:160px;object-fit:contain;background:#181818;display:block}.pb{padding:10px 12px}.pb h4{margin:6px 0 6px;font-size:16px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px}.tag.photo{background:var(--photobg);color:var(--photo)}.tag.gen{background:var(--genbg);color:var(--gen)}
+dl{display:grid;grid-template-columns:76px 1fr;gap:3px 8px;margin:0;font-size:12.5px}dt{color:var(--mute)}dd{margin:0;overflow-wrap:anywhere}
+.none{color:var(--mute);font-style:italic}footer{color:var(--mute);font-size:13px;margin-top:28px;max-width:85ch}
+.cur a{display:block;width:200px}.p>a{display:block}
+.tag.pick{background:var(--link);color:var(--card)}.p.is-pick{border:2px solid var(--link)}.pulled-status{margin:0 0 10px;font-size:14px}
+details.pulled{margin:28px 0 0;border-top:1px solid var(--line);padding-top:12px}details.pulled>summary{cursor:pointer;font-size:20px;font-weight:600;margin:0 0 12px;padding:6px 0}
+
+.tag.best{background:var(--link);color:var(--card)}.mark{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px;background:var(--photobg);color:var(--photo)}
+.mark.gap{background:var(--genbg);color:var(--gen)}.nn{background:var(--line);color:var(--mute)}
+.gapfig{width:200px;height:200px;border:2px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--mute);font-size:13px}
+.route{margin:10px 0 0;font-size:14px;border-left:3px solid var(--gen);padding:2px 0 2px 10px}.verdict{font-size:13px;color:var(--mute);margin:0 0 8px}
+</style><meta name="robots" content="noindex"><style>
+.pub-bar{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;color:var(--mute)}
+.pub-bar a{font-weight:600}
+.pub-out{display:flex;align-items:center;justify-content:center;text-align:center;height:160px;padding:12px;background:var(--bg);color:var(--mute);font-size:13px;border-bottom:1px solid var(--line)}
+.cur .pub-out{width:200px;height:200px;border:1px dashed var(--mute);border-radius:8px}
+</style></head><body><main><p class="pub-bar"><a href="./">← All scout pages</a> · Public copy, published 2026-10-16 11:48. Poly Haven’s previews are not copied (their site pictures are not CC0); the offline 3D viewer stays on the owner’s machine.</p>
+<h1>Concrete scout — CC0 prospects</h1>
+<p class="lede">Every row of Concrete that the 16 Oct material grid uses (HIT) or proposes (GAP), from <code>docs/plans/SURFACE_LIST-proposed-2026-10-16.md</code> (commit d770ab5c), with up to three CC0 prospects from Poly Haven and ambientCG. Real photos are preferred; a generated (computer-made) set is listed only when neither library has a photo of that look, and it is marked. Built 2026-10-16 the way <code>scout concrete</code> builds a page, plus each prospect's real size and 2K download size. Read-only: nothing in the game was changed, nothing was downloaded at full size, and nothing entered the records.</p>
+<p class="lede"><b>3D:</b> an ambientCG prospect's picture opens ambientCG's own 3D preview; a Poly Haven prospect's page has its 3D preview. Our offline viewer of the game's own maps is not on this public copy.</p>
+<div class="stats"><div class="stat"><b>8</b>rows scouted (7 HIT, 1 GAP) of 13 on the list</div><div class="stat"><b>8</b>with a real-photo prospect</div><div class="stat"><b>0</b>computer-made only</div><div class="stat"><b>0</b>nothing found</div><div class="stat"><b>5</b>left out as [UNUSED?]</div></div>
+<p class="lede">Left out, marked [UNUSED?] on the list (no grid cell uses them): Stamped, Exposed aggregate, Cracked and spalled, Rebar-exposed, Graffitied concrete. Already approved or under review in <code>docs/materials/concrete.json</code>: none.</p>
+<ol class="toc"><li><a href="#concrete_poured_smooth">Poured smooth</a> <span class="ok">photo</span></li><li><a href="#concrete_board_formed">Board-formed</a> <span class="ok">photo</span></li><li><a href="#concrete_broom_brushed_finish">Broom / brushed finish</a> <span class="ok">photo</span></li><li><a href="#concrete_polished">Polished</a> <span class="ok">photo</span></li><li><a href="#concrete_precast_panel">Precast panel</a> <span class="ok">photo</span></li><li><a href="#concrete_tilt_up_panel">Tilt-up panel</a> <span class="ok">photo</span></li><li><a href="#concrete_shotcrete_gunite">Shotcrete / gunite</a> <span class="ok">photo</span></li><li><a href="#gap-painted_concrete">Painted concrete</a> <span class="ok">photo</span></li></ol>
+<section id="concrete_poured_smooth">
+<header class="rh"><span class="num">01</span><h2>Poured smooth</h2><code class="key">concrete_poured_smooth</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_poured_smooth.jpg" alt="current look of Poured smooth" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_poured_smooth.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Plain smooth poured concrete photos; climbing_wall_base has the round form-tie holes of a real poured wall.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/concrete_wall_009" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/concrete_wall_009" target="_blank" rel="noopener">Concrete Wall 009</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_wall_009</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.8 × 1.8 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>71.1 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 12.8 MB</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_wall_009" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_wall_009</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_wall_009" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Color.jpg?11726&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Displacement.jpg?75170&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_NormalDX.jpg?57213&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Roughness.jpg?81929" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="concrete_files/acg_Concrete046.jpg" alt="Concrete 046" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Concrete046" target="_blank" rel="noopener">Concrete 046</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Concrete046</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>2.4 × 2.4 m</dd>
+<dt>2K size</dt><dd>59.7 MB — the 2K-PNG zip a pull fetches; 2K-JPG zip 23.2 MB</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Concrete046" target="_blank" rel="noopener">https://ambientcg.com/a/Concrete046</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Color.jpg?11726&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Displacement.jpg?75170&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_NormalDX.jpg?57213&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete046/Concrete046_SQ_Roughness.jpg?81929" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/climbing_wall_base" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/climbing_wall_base" target="_blank" rel="noopener">Climbing Wall Base</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · climbing_wall_base</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>71.6 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 10.4 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/climbing_wall_base" target="_blank" rel="noopener">https://polyhaven.com/a/climbing_wall_base</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/climbing_wall_base" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="concrete_board_formed">
+<header class="rh"><span class="num">02</span><h2>Board-formed</h2><code class="key">concrete_board_formed</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_board_formed.jpg" alt="current look of Board-formed" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_board_formed.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">wood_textured_concrete carries the plank grain of the forms; the two &#x27;layers&#x27; photos show board lines without much grain.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/wood_textured_concrete" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/wood_textured_concrete" target="_blank" rel="noopener">Wood Textured Concrete</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · wood_textured_concrete</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.8 × 1.8 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>73.9 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 12.5 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/wood_textured_concrete" target="_blank" rel="noopener">https://polyhaven.com/a/wood_textured_concrete</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/wood_textured_concrete" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_layers" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_layers" target="_blank" rel="noopener">Concrete Layers</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_layers</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.55 × 1.55 m (page: “1.5m wide”)</dd>
+<dt>2K size</dt><dd>71.0 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 12.3 MB</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_layers" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_layers</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_layers" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_layers_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_layers_02" target="_blank" rel="noopener">Concrete Layers 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_layers_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>77.1 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 12.0 MB</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_layers_02" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_layers_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_layers_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="concrete_broom_brushed_finish">
+<header class="rh"><span class="num">03</span><h2>Broom / brushed finish</h2><code class="key">concrete_broom_brushed_finish</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_broom_brushed_finish.jpg" alt="current look of Broom / brushed finish" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_broom_brushed_finish.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Three real photos of brushed concrete; _04 has the straightest broom lines.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/brushed_concrete" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/brushed_concrete" target="_blank" rel="noopener">Brushed Concrete </a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · brushed_concrete</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.5 × 2.5 m (page: “2.5m wide”)</dd>
+<dt>2K size</dt><dd>80.2 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 16.8 MB</dd>
+<dt>Credit</dt><dd>Dario Barresi Processing; Dimitrios Savva Photography</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/brushed_concrete" target="_blank" rel="noopener">https://polyhaven.com/a/brushed_concrete</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/brushed_concrete" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/brushed_concrete_04" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/brushed_concrete_04" target="_blank" rel="noopener">Brushed Concrete 04</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · brushed_concrete_04</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m</dd>
+<dt>2K size</dt><dd>75.9 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 16.6 MB</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/brushed_concrete_04" target="_blank" rel="noopener">https://polyhaven.com/a/brushed_concrete_04</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/brushed_concrete_04" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/brushed_concrete_03" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/brushed_concrete_03" target="_blank" rel="noopener">Brushed Concrete 03</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · brushed_concrete_03</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>72.7 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 16.2 MB</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/brushed_concrete_03" target="_blank" rel="noopener">https://polyhaven.com/a/brushed_concrete_03</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/brushed_concrete_03" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="concrete_polished">
+<header class="rh"><span class="num">04</span><h2>Polished</h2><code class="key">concrete_polished</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_polished.jpg" alt="current look of Polished" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_polished.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Smooth, slightly shiny floor photos; Concrete040 has the fine dark speckle our drawing shows.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/concrete_floor_worn_001" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/concrete_floor_worn_001" target="_blank" rel="noopener">Concrete Floor Worn 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_floor_worn_001</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 × 3 m</dd>
+<dt>2K size</dt><dd>78.6 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 3.4 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva Photography; Rico Cilliers Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_floor_worn_001" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_floor_worn_001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_floor_worn_001" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">Smooth Concrete Floor</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · smooth_concrete_floor</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>79.3 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 14.5 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">https://polyhaven.com/a/smooth_concrete_floor</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Color.jpg?6822&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Displacement.jpg?55044&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_NormalDX.jpg?25000&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Roughness.jpg?12330&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_AmbientOcclusion.jpg?30641" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="concrete_files/acg_Concrete040.jpg" alt="Concrete 040" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Concrete040" target="_blank" rel="noopener">Concrete 040</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Concrete040</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>1.4 × 1.4 m</dd>
+<dt>2K size</dt><dd>70.0 MB — the 2K-PNG zip a pull fetches; 2K-JPG zip 33.9 MB</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Concrete040" target="_blank" rel="noopener">https://ambientcg.com/a/Concrete040</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Color.jpg?6822&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Displacement.jpg?55044&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_NormalDX.jpg?25000&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_Roughness.jpg?12330&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete040/Concrete040_SQ_AmbientOcclusion.jpg?30641" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="concrete_precast_panel">
+<header class="rh"><span class="num">05</span><h2>Precast panel</h2><code class="key">concrete_precast_panel</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_precast_panel.jpg" alt="current look of Precast panel" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_precast_panel.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Photos of walls made of separate concrete slabs with visible joints; ours runs the joints up and down, these run across (a turn fixes it).</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/concrete_slab_wall" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/concrete_slab_wall" target="_blank" rel="noopener">Concrete Slab Wall</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_slab_wall</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.3 × 2.3 m (page: “2.3m wide”)</dd>
+<dt>2K size</dt><dd>73.8 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 12.1 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_slab_wall" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_slab_wall</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_slab_wall" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_slab_wall_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_slab_wall_02" target="_blank" rel="noopener">Concrete Slab Wall 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_slab_wall_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.1 × 2.1 m (page: “2.1m wide”)</dd>
+<dt>2K size</dt><dd>65.6 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 10.7 MB</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_slab_wall_02" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_slab_wall_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_slab_wall_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_panels" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_panels" target="_blank" rel="noopener">Concrete Panels</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_panels</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>8 × 8 m (page: “8m wide”)</dd>
+<dt>2K size</dt><dd>67.8 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 10.5 MB</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_panels" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_panels</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_panels" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="concrete_tilt_up_panel">
+<header class="rh"><span class="num">06</span><h2>Tilt-up panel</h2><code class="key">concrete_tilt_up_panel</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_tilt_up_panel.jpg" alt="current look of Tilt-up panel" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_tilt_up_panel.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Big flat cast panels with faint seams; Concrete036 has no seams but the mottled grey of a site-cast slab.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/concrete_wall_004" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/concrete_wall_004" target="_blank" rel="noopener">Concrete Wall 004</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_wall_004</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>75.9 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 14.7 MB</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni Photography; Dario Barresi Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_wall_004" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_wall_004</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_wall_004" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_wall_007" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_wall_007" target="_blank" rel="noopener">Concrete Wall 007</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_wall_007</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.16 × 2.16 m (page: “2.2m wide”)</dd>
+<dt>2K size</dt><dd>79.3 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 13.1 MB</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni Photography; Dario Barresi Processing; Rico Cilliers Tiling</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_wall_007" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_wall_007</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_wall_007" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Color.jpg?28056&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Displacement.jpg?89276&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_NormalDX.jpg?13801&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Roughness.jpg?60822" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="concrete_files/acg_Concrete036.jpg" alt="Concrete 036" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Concrete036" target="_blank" rel="noopener">Concrete 036</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Concrete036</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given (ambientCG lists no size; a pull assumes 1 m)</dd>
+<dt>2K size</dt><dd>62.5 MB — the 2K-PNG zip a pull fetches; 2K-JPG zip 24.7 MB</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Concrete036" target="_blank" rel="noopener">https://ambientcg.com/a/Concrete036</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Color.jpg?28056&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Displacement.jpg?89276&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_NormalDX.jpg?13801&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete036/Concrete036_SQ_Roughness.jpg?60822" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="concrete_shotcrete_gunite">
+<header class="rh"><span class="num">07</span><h2>Shotcrete / gunite</h2><code class="key">concrete_shotcrete_gunite</code> <span class="mark">HIT — the grid uses it</span></header>
+<div class="row"><figure class="cur"><img src="concrete_files/current_concrete_shotcrete_gunite.jpg" alt="current look of Shotcrete / gunite" width="200" height="200"><figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_concrete_shotcrete_gunite.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Photos of rough, sprayed-looking lumpy concrete; rough_concrete is the closest to sprayed tunnel lining.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/rough_concrete" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/rough_concrete" target="_blank" rel="noopener">Rough Concrete</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rough_concrete</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.23 × 1.23 m (page: “1.2m wide”)</dd>
+<dt>2K size</dt><dd>82.9 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 18.8 MB</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rough_concrete" target="_blank" rel="noopener">https://polyhaven.com/a/rough_concrete</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rough_concrete" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Color.jpg?38436&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Displacement.jpg?11251&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_NormalDX.jpg?12219&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Roughness.jpg?92831&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_AmbientOcclusion.jpg?12435" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="concrete_files/acg_Concrete003.jpg" alt="Concrete 003" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Concrete003" target="_blank" rel="noopener">Concrete 003</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Concrete003</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given (ambientCG lists no size; a pull assumes 1 m)</dd>
+<dt>2K size</dt><dd>62.2 MB — the 2K-PNG zip a pull fetches; 2K-JPG zip 25.4 MB</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Concrete003" target="_blank" rel="noopener">https://ambientcg.com/a/Concrete003</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Color.jpg?38436&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Displacement.jpg?11251&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_NormalDX.jpg?12219&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_Roughness.jpg?92831&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete003/Concrete003_SQ_AmbientOcclusion.jpg?12435" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Color.jpg?36805&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Displacement.jpg?25007&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_NormalDX.jpg?4074&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Roughness.jpg?58241&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_AmbientOcclusion.jpg?43662" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="concrete_files/acg_Concrete025.jpg" alt="Concrete 025" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Concrete025" target="_blank" rel="noopener">Concrete 025</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Concrete025</code></dd>
+<dt>Technique</dt><dd>Surface Photogrammetry Child Asset (page says “Surface Photogrammetry Child Asset”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given (ambientCG lists no size; a pull assumes 1 m)</dd>
+<dt>2K size</dt><dd>70.2 MB — the 2K-PNG zip a pull fetches; 2K-JPG zip 33.6 MB</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Concrete025" target="_blank" rel="noopener">https://ambientcg.com/a/Concrete025</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Color.jpg?36805&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Displacement.jpg?25007&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_NormalDX.jpg?4074&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_Roughness.jpg?58241&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Concrete025/Concrete025_SQ_AmbientOcclusion.jpg?43662" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="gap-painted_concrete">
+<header class="rh"><span class="num">08</span><h2>Painted concrete</h2><code class="key">no key yet</code> <span class="mark gap">GAP 16 Oct — proposed</span></header>
+<div class="row"><figure class="cur"><div class="gapfig">Not in the game yet: a new entry the 16 Oct grid proposes</div><figcaption><b>No current look</b><br>List note: procedural (the colour modifier over Poured smooth; form-tie holes showing)</figcaption></figure>
+<div class="ps"><p class="verdict">Real photo prospect found.</p><p class="note">Three real photos of painted concrete: painted_concrete is a green-painted wall with chips; painted_concrete_02 a smooth dark-painted surface; concrete_floor_painted a worn dark-painted floor. None shows form-tie holes (Poured smooth&#x27;s prospect concrete_wall_009 has them, unpainted). The list expects a procedural colour modifier; these show a photo route exists too.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/painted_concrete" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span> <span class="tag best">BEST FIT</span>
+<h4><a href="https://polyhaven.com/a/painted_concrete" target="_blank" rel="noopener">Painted Concrete</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · painted_concrete</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>80.3 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 16.9 MB</dd>
+<dt>Credit</dt><dd>Dario Barresi Processing; Dimitrios Savva Photography</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/painted_concrete" target="_blank" rel="noopener">https://polyhaven.com/a/painted_concrete</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/painted_concrete" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Painted Concrete 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · painted_concrete_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>4 × 4 m (page: “4m wide”)</dd>
+<dt>2K size</dt><dd>61.8 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 11.4 MB</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">https://polyhaven.com/a/painted_concrete_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/concrete_floor_painted" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/concrete_floor_painted" target="_blank" rel="noopener">Concrete Floor Painted</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · concrete_floor_painted</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>88.5 MB — 2K PNG maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); as JPG 11.8 MB</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/concrete_floor_painted" target="_blank" rel="noopener">https://polyhaven.com/a/concrete_floor_painted</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/concrete_floor_painted" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section>
+<footer><p><b>How this was checked.</b> Both catalogues were refreshed on 2026-10-16 (Poly Haven: all textures; ambientCG: every material) and the prospects chosen by eye from their thumbnails; the HIT rows keep the 10 Oct picks, re-checked against the current looks. Each prospect's own page was fetched on 2026-10-16 and its licence line read there: every Poly Haven page shows “CC0 License” beside the author credit and declares “CC0 1.0 Universal – public domain dedication, no attribution required”; every ambientCG page says “All assets are released under the Creative Commons CC0 license…”. A page without that line would have stopped the build. ambientCG's technique is copied from the page's <i>Technique</i> field (the site spells procedural “Prodedural”); Poly Haven's textures are scans of real surfaces, and where the credits name a photographer that is shown.</p>
+<p><b>Real size</b>: Poly Haven's own dimensions (its page's “… wide” shown beside them); ambientCG's dimension fields, which most sets leave empty. <b>2K size</b>: what <code>tools/surface_photos.py</code> would fetch on a pull, read from each library's file list without downloading: Poly Haven's 2K PNG maps (Diffuse, nor_gl, Rough, AO, arm, where present), ambientCG's 2K-PNG zip; the JPG equivalent is shown for scale.</p>
+<p>Thumbnails are the libraries' own small previews (256 px), stored beside this page in <code>concrete_files/</code>. Current-look thumbnails are 256 px copies of the game's colour picture. The 3D viewer lives in <code>viewer/</code> and reads copies of the game's map files (same bytes, checksums shown).</p></footer>
+</main></body></html>

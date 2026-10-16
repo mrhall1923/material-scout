@@ -1,0 +1,496 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flooring and tile Scout</title><style>:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--mute:#6a6863;--line:#dedbd4;--photo:#1f7a4a;--photobg:#e2f2e8;--gen:#8a5a00;--genbg:#fbefd6;--link:#1d5fa8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}}
+:root[data-theme="dark"]{--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 64px}a{color:var(--link)}
+h1{font-size:28px;margin:0 0 4px}.lede{color:var(--mute);margin:0 0 16px;max-width:75ch}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:24px}
+.toc{columns:3 220px;padding-left:20px;margin:8px 0 24px}.toc li{break-inside:avoid;margin:2px 0}.toc span{font-size:12px;padding:0 6px;border-radius:8px}.ok{background:var(--photobg);color:var(--photo)}.gn{background:var(--genbg);color:var(--gen)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 18px}
+.rh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}.rh h2{margin:0;font-size:20px}.num{color:var(--mute);font-variant-numeric:tabular-nums}.key{color:var(--mute);font-size:12px}
+.row{display:grid;grid-template-columns:220px 1fr;gap:18px}@media (max-width:720px){.row{grid-template-columns:1fr}}
+.cur{margin:0}.cur img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.cur figcaption{overflow-wrap:anywhere;font-size:13px;margin-top:6px;color:var(--mute)}.cur b{color:var(--ink)}.g{font-weight:600;color:var(--ink)}
+.note{margin:0 0 10px;font-size:14px}.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.p{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.p.is-gen{border-style:dashed;border-color:var(--gen)}
+.p img{width:100%;height:160px;object-fit:contain;background:#181818;display:block}.pb{padding:10px 12px}.pb h4{margin:6px 0 6px;font-size:16px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px}.tag.photo{background:var(--photobg);color:var(--photo)}.tag.gen{background:var(--genbg);color:var(--gen)}
+dl{display:grid;grid-template-columns:76px 1fr;gap:3px 8px;margin:0;font-size:12.5px}dt{color:var(--mute)}dd{margin:0;overflow-wrap:anywhere}
+.none{color:var(--mute);font-style:italic}footer{color:var(--mute);font-size:13px;margin-top:28px;max-width:85ch}
+.cur a{display:block;width:200px}.p>a{display:block}
+.tag.pick{background:var(--link);color:var(--card)}.p.is-pick{border:2px solid var(--link)}.pulled-status{margin:0 0 10px;font-size:14px}
+details.pulled{margin:28px 0 0;border-top:1px solid var(--line);padding-top:12px}details.pulled>summary{cursor:pointer;font-size:20px;font-weight:600;margin:0 0 12px;padding:6px 0}
+
+.tag.gap{background:var(--link);color:var(--card)}.nr{background:var(--line);color:var(--ink)}
+.ph-gap{width:200px;height:200px;border-radius:8px;border:1px dashed var(--mute);display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:var(--mute);font-size:13px}
+.route{margin:0 0 10px;font-size:14px;padding:8px 10px;border-left:3px solid var(--gen);background:var(--genbg);border-radius:4px}
+.fit{font-size:12.5px;margin:0 0 6px;color:var(--ink)}
+</style><meta name="robots" content="noindex"><style>
+.pub-bar{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;color:var(--mute)}
+.pub-bar a{font-weight:600}
+.pub-out{display:flex;align-items:center;justify-content:center;text-align:center;height:160px;padding:12px;background:var(--bg);color:var(--mute);font-size:13px;border-bottom:1px solid var(--line)}
+.cur .pub-out{width:200px;height:200px;border:1px dashed var(--mute);border-radius:8px}
+</style></head><body><main><p class="pub-bar"><a href="./">← All scout pages</a> · Public copy, published 2026-10-16 11:48. Poly Haven’s previews are not copied (their site pictures are not CC0); the offline 3D viewer stays on the owner’s machine.</p>
+<h1>Flooring and tile scout — CC0 prospects</h1>
+<p class="lede">Every entry of Flooring and tile in the proposed surface list of 16 Oct (<code>docs/plans/SURFACE_LIST-proposed-2026-10-16.md</code>, d770ab5c) that the material grid uses (HIT) or proposes (GAP), less the entries already approved or under review, with up to three CC0 prospects from Poly Haven and ambientCG. Real photos are preferred; a generated (computer-made) set is listed only when neither library has a photo of that look, and it is marked. Rows with nothing real say so, with the likely route. Built 2026-10-16 by <code>scout flooring</code> (the 16 Oct row set). Read-only: nothing in the game was changed and nothing was downloaded at full size.</p>
+<p class="lede"><b>Sizes:</b> <i>Real size</i> is the width one copy of the picture covers in the real world, as the library gives it. <i>2K size</i> is the download at 2K: what the project's pull (<code>tools/surface_photos.py</code>) would fetch — ambientCG's 2K-PNG zip, Poly Haven's 2K PNG maps — and the smaller JPG figure beside it.</p>
+<p class="lede"><b>3D:</b> an ambientCG prospect's picture opens ambientCG's own 3D preview; a Poly Haven prospect's page has its 3D preview. Our offline viewer of the game's own maps is not on this public copy.</p>
+<div class="stats"><div class="stat"><b>14</b>rows scouted (13 the grid uses, 1 it proposes; 15 entries in Flooring and tile)</div><div class="stat"><b>14</b>with at least one prospect</div><div class="stat"><b>14</b>with a real photo of the look</div><div class="stat"><b>0</b>generated only (route noted)</div><div class="stat"><b>0</b>no real match (route noted)</div></div>
+<details><summary>Left out (1)</summary><ul><li>Hex tile — [UNUSED?] in the list (no grid cell uses it)</li></ul></details>
+<ol class="toc"><li><a href="#flooring_ceramic_tile_square">Ceramic tile, square</a> <span class="ok">photo</span></li><li><a href="#flooring_subway_tile">Subway tile</a> <span class="ok">photo</span></li><li><a href="#flooring_mosaic_tile">Mosaic tile</a> <span class="ok">photo</span></li><li><a href="#flooring_quarry_tile">Quarry tile</a> <span class="ok">photo</span></li><li><a href="#flooring_linoleum_sheet">Linoleum sheet</a> <span class="ok">photo</span></li><li><a href="#flooring_vinyl_sheet">Vinyl sheet</a> <span class="ok">photo</span></li><li><a href="#flooring_vct_commercial_tile">VCT commercial tile</a> <span class="ok">photo</span></li><li><a href="#flooring_laminate">Laminate</a> <span class="ok">photo</span></li><li><a href="#flooring_carpet_residential">Carpet, residential</a> <span class="ok">photo</span></li><li><a href="#flooring_carpet_commercial_loop">Carpet, commercial loop</a> <span class="ok">photo</span></li><li><a href="#flooring_rubber_safety_matting">Rubber safety matting</a> <span class="ok">photo</span></li><li><a href="#flooring_epoxy_floor">Epoxy floor</a> <span class="ok">photo</span></li><li><a href="#flooring_anti_slip_industrial_coating">Anti-slip industrial coating</a> <span class="ok">photo</span></li><li><a href="#gap_terrazzo">Terrazzo</a> <span class="ok">photo</span> <span class="nr">GAP</span></li></ol>
+<section id="flooring_ceramic_tile_square">
+<header class="rh"><span class="num">01</span><h2>Ceramic tile, square</h2><code class="key">flooring_ceramic_tile_square</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_ceramic_tile_square.jpg" alt="current look of Ceramic tile, square" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_ceramic_tile_square.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “square ceramic tile”, 27 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">Tiles001 is cream square tiles very close to our drawing; the other two are larger, warmer floor tiles.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Color.jpg?70713&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Displacement.jpg?28961&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_NormalDX.jpg?23499&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Roughness.jpg?62067" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Tiles001.jpg" alt="Tiles 001" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Tiles001" target="_blank" rel="noopener">Tiles 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Tiles001</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>26.2 MB as 2K-JPG, its only format: no PNG zip, and tools/surface_photos.py pulls ambientCG&#x27;s 2K-PNG, so a pull would refuse this set as the tool stands</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Tiles001" target="_blank" rel="noopener">https://ambientcg.com/view?id=Tiles001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Color.jpg?70713&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Displacement.jpg?28961&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_NormalDX.jpg?23499&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles001/Tiles001_SQ_Roughness.jpg?62067" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/grey_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/grey_tiles" target="_blank" rel="noopener">Grey Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · grey_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.2 × 2.2 m (page: “2.2m wide”)</dd>
+<dt>2K size</dt><dd>61.7 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 7.9 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/grey_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/grey_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/grey_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/floor_tiles_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/floor_tiles_02" target="_blank" rel="noopener">Floor Tiles 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · floor_tiles_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>4 × 4 m (page: “4m wide”)</dd>
+<dt>2K size</dt><dd>31.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 5.6 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/floor_tiles_02" target="_blank" rel="noopener">https://polyhaven.com/a/floor_tiles_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/floor_tiles_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_subway_tile">
+<header class="rh"><span class="num">02</span><h2>Subway tile</h2><code class="key">flooring_subway_tile</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_subway_tile.jpg" alt="current look of Subway tile" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_subway_tile.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “subway tile”, 2 cells (room)</small></figcaption></figure>
+<div class="ps"><p class="note">long_white_tiles is long white tiles in a running pattern, close to subway tile. rounded_square_tiled_wall is small beige tiles in offset rows, a weaker fit. ambientCG&#x27;s subway tiles are all computer-made, so left off while a photo exists.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/long_white_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/long_white_tiles" target="_blank" rel="noopener">Long White Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · long_white_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.27 × 1.27 m (page: “1.3m wide”)</dd>
+<dt>2K size</dt><dd>71.1 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.0 MB as JPG</dd>
+<dt>Credit</dt><dd>Jenelle van Heerden (processing); Sergej Majboroda (photography)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/long_white_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/long_white_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/long_white_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/rounded_square_tiled_wall" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rounded_square_tiled_wall" target="_blank" rel="noopener">Rounded Square Tiled Wall</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rounded_square_tiled_wall</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>73.8 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 13.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rounded_square_tiled_wall" target="_blank" rel="noopener">https://polyhaven.com/a/rounded_square_tiled_wall</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rounded_square_tiled_wall" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_mosaic_tile">
+<header class="rh"><span class="num">03</span><h2>Mosaic tile</h2><code class="key">flooring_mosaic_tile</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_mosaic_tile.jpg" alt="current look of Mosaic tile" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_mosaic_tile.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “mosaic tile”, 1 cell (style)</small></figcaption></figure>
+<div class="ps"><p class="note">Tiles019 is blue-and-white small mosaic, almost our drawing; the other two are stone and small square mosaics in browns.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Color.jpg?651&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Displacement.jpg?88436&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_NormalDX.jpg?77081&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Roughness.jpg?40676&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_AmbientOcclusion.jpg?62216" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Tiles019.jpg" alt="Tiles 019" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Tiles019" target="_blank" rel="noopener">Tiles 019</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Tiles019</code></dd>
+<dt>Technique</dt><dd>Approximation Description Captured on the island of Juist (page says “Approximation Description Captured on the island of Juist”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>57.5 MB as the 2K-PNG zip a pull fetches; 22.1 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Tiles019" target="_blank" rel="noopener">https://ambientcg.com/view?id=Tiles019</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Color.jpg?651&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Displacement.jpg?88436&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_NormalDX.jpg?77081&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_Roughness.jpg?40676&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Tiles019/Tiles019_SQ_AmbientOcclusion.jpg?62216" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/marble_mosaic_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/marble_mosaic_tiles" target="_blank" rel="noopener">Marble Mosaic Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · marble_mosaic_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>74.1 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 16.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/marble_mosaic_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/marble_mosaic_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/marble_mosaic_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/floor_tiles_09" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/floor_tiles_09" target="_blank" rel="noopener">Floor Tiles 09</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · floor_tiles_09</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>30.4 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 7.2 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/floor_tiles_09" target="_blank" rel="noopener">https://polyhaven.com/a/floor_tiles_09</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/floor_tiles_09" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_quarry_tile">
+<header class="rh"><span class="num">04</span><h2>Quarry tile</h2><code class="key">flooring_quarry_tile</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_quarry_tile.jpg" alt="current look of Quarry tile" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_quarry_tile.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “quarry tile”, 8 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">Photos of red-brown square clay floor tiles; terracotta_floor_tiles is the closest red.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/terracotta_floor_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/terracotta_floor_tiles" target="_blank" rel="noopener">Terracotta Floor Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · terracotta_floor_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.08 × 2.08 m (page: “2.1m wide”)</dd>
+<dt>2K size</dt><dd>74.5 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 13.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/terracotta_floor_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/terracotta_floor_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/terracotta_floor_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/brown_floor_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/brown_floor_tiles" target="_blank" rel="noopener">Brown Floor Tilles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · brown_floor_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.7 × 1.7 m (page: “1.7m wide”)</dd>
+<dt>2K size</dt><dd>71.3 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/brown_floor_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/brown_floor_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/brown_floor_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/patio_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/patio_tiles" target="_blank" rel="noopener">Patio Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · patio_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.15 × 2.15 m (page: “2.2m wide”)</dd>
+<dt>2K size</dt><dd>76.2 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Dario Barresi (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/patio_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/patio_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/patio_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_linoleum_sheet">
+<header class="rh"><span class="num">05</span><h2>Linoleum sheet</h2><code class="key">flooring_linoleum_sheet</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_linoleum_sheet.jpg" alt="current look of Linoleum sheet" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_linoleum_sheet.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “linoleum”, 2 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">The only two linoleum photos: one plain brown, one old patterned. Neither has our green marbling.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/linoleum_brown" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/linoleum_brown" target="_blank" rel="noopener">Linoleum Brown</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · linoleum_brown</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>60.2 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 13.1 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/linoleum_brown" target="_blank" rel="noopener">https://polyhaven.com/a/linoleum_brown</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/linoleum_brown" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">Old Linoleum Flooring 01</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · old_linoleum_flooring_01</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.99 × 1.99 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>70.0 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 9.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">https://polyhaven.com/a/old_linoleum_flooring_01</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_vinyl_sheet">
+<header class="rh"><span class="num">06</span><h2>Vinyl sheet</h2><code class="key">flooring_vinyl_sheet</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_vinyl_sheet.jpg" alt="current look of Vinyl sheet" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_vinyl_sheet.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “sheet vinyl”, 21 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">No vinyl sheet in either library. Nearest: an old patterned lino and plain beige square tiles — weak fits.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">Old Linoleum Flooring 01</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · old_linoleum_flooring_01</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.99 × 1.99 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>70.0 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 9.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">https://polyhaven.com/a/old_linoleum_flooring_01</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/old_linoleum_flooring_01" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/floor_tiles_08" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/floor_tiles_08" target="_blank" rel="noopener">Floor Tiles 08</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · floor_tiles_08</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.5 × 1.5 m (page: “1.5m wide”)</dd>
+<dt>2K size</dt><dd>26.8 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 5.7 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/floor_tiles_08" target="_blank" rel="noopener">https://polyhaven.com/a/floor_tiles_08</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/floor_tiles_08" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_vct_commercial_tile">
+<header class="rh"><span class="num">07</span><h2>VCT commercial tile</h2><code class="key">flooring_vct_commercial_tile</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_vct_commercial_tile.jpg" alt="current look of VCT commercial tile" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_vct_commercial_tile.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “VCT”, 4 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">No vinyl office tile in either library. Nearest: checkerboard floor tiles in greys and browns, not our blue-grey.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/floor_tiles_06" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/floor_tiles_06" target="_blank" rel="noopener">Floor Tiles 06</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · floor_tiles_06</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>24.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 4.3 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/floor_tiles_06" target="_blank" rel="noopener">https://polyhaven.com/a/floor_tiles_06</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/floor_tiles_06" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/checkered_pavement_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/checkered_pavement_tiles" target="_blank" rel="noopener">Checkered Pavement Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · checkered_pavement_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>68.3 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 10.2 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/checkered_pavement_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/checkered_pavement_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/checkered_pavement_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/square_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/square_tiles" target="_blank" rel="noopener">Square Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · square_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.4 × 2.4 m (page: “2.4m wide”)</dd>
+<dt>2K size</dt><dd>79.3 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 14.7 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/square_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/square_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/square_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_laminate">
+<header class="rh"><span class="num">08</span><h2>Laminate</h2><code class="key">flooring_laminate</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_laminate.jpg" alt="current look of Laminate" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_laminate.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “laminate floor”, 1 cell (style)</small></figcaption></figure>
+<div class="ps"><p class="note">Three real photos of laminate plank floor, light to mid brown.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/laminate_floor" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/laminate_floor" target="_blank" rel="noopener">Laminate Floor</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · laminate_floor</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>72.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 10.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Dario Barresi (Processing); Dimitrios Savva (Photography)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/laminate_floor" target="_blank" rel="noopener">https://polyhaven.com/a/laminate_floor</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/laminate_floor" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/laminate_floor_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/laminate_floor_02" target="_blank" rel="noopener">Laminate Floor 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · laminate_floor_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.7 × 1.7 m (Poly Haven&#x27;s dimensions)</dd>
+<dt>2K size</dt><dd>76.6 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 12.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Dario Barresi (Processing); Charlotte Baglioni (photography)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/laminate_floor_02" target="_blank" rel="noopener">https://polyhaven.com/a/laminate_floor_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/laminate_floor_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/laminate_floor_03" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/laminate_floor_03" target="_blank" rel="noopener">Laminate Floor 03</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · laminate_floor_03</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.08 × 2.08 m (page: “2.1m wide”)</dd>
+<dt>2K size</dt><dd>74.0 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.0 MB as JPG</dd>
+<dt>Credit</dt><dd>Dario Barresi (Processing); Charlotte Baglioni (Photography)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/laminate_floor_03" target="_blank" rel="noopener">https://polyhaven.com/a/laminate_floor_03</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/laminate_floor_03" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_carpet_residential">
+<header class="rh"><span class="num">09</span><h2>Carpet, residential</h2><code class="key">flooring_carpet_residential</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_carpet_residential.jpg" alt="current look of Carpet, residential" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_carpet_residential.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “residential carpet”, 3 cells (room)</small></figcaption></figure>
+<div class="ps"><p class="note">Soft cut-pile carpet photos. dirty_carpet is shot as a draped cloth, so it may not repeat cleanly on a floor.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Color.jpg?29621&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Displacement.jpg?32875&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_NormalDX.jpg?35785&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Roughness.jpg?42448&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_AmbientOcclusion.jpg?44642" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Carpet016.jpg" alt="Carpet 016" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Carpet016" target="_blank" rel="noopener">Carpet 016</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Carpet016</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.7 m × 1.7 m (page)</dd>
+<dt>2K size</dt><dd>65.7 MB as the 2K-PNG zip a pull fetches; 31.2 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Carpet016" target="_blank" rel="noopener">https://ambientcg.com/view?id=Carpet016</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Color.jpg?29621&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Displacement.jpg?32875&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_NormalDX.jpg?35785&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_Roughness.jpg?42448&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet016/Carpet016_SQ_AmbientOcclusion.jpg?44642" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/dirty_carpet" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/dirty_carpet" target="_blank" rel="noopener">Dirty Carpet</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · dirty_carpet</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>0.6 × 0.6 m (page: “0.6m wide”)</dd>
+<dt>2K size</dt><dd>72.6 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 19.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Rohit Seervi (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/dirty_carpet" target="_blank" rel="noopener">https://polyhaven.com/a/dirty_carpet</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/dirty_carpet" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_carpet_commercial_loop">
+<header class="rh"><span class="num">10</span><h2>Carpet, commercial loop</h2><code class="key">flooring_carpet_commercial_loop</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_carpet_commercial_loop.jpg" alt="current look of Carpet, commercial loop" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_carpet_commercial_loop.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “loop carpet”, 1 cell (room)</small></figcaption></figure>
+<div class="ps"><p class="note">Photos of tight loop-pile carpet. All are light or red, not our grey; the colour would be tinted in the game.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Color.jpg?997&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Displacement.jpg?97295&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_NormalDX.jpg?22943&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Roughness.jpg?99333" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Carpet014.jpg" alt="Carpet 014" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Carpet014" target="_blank" rel="noopener">Carpet 014</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Carpet014</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>64.3 MB as the 2K-PNG zip a pull fetches; 28.8 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Carpet014" target="_blank" rel="noopener">https://ambientcg.com/view?id=Carpet014</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Color.jpg?997&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Displacement.jpg?97295&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_NormalDX.jpg?22943&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet014/Carpet014_SQ_Roughness.jpg?99333" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Color.jpg?42466&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Displacement.jpg?65558&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_NormalDX.jpg?76460&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Roughness.jpg?2732" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Carpet001.jpg" alt="Carpet 001" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Carpet001" target="_blank" rel="noopener">Carpet 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Carpet001</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>65.0 MB as the 2K-PNG zip a pull fetches; 29.6 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Carpet001" target="_blank" rel="noopener">https://ambientcg.com/view?id=Carpet001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Color.jpg?42466&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Displacement.jpg?65558&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_NormalDX.jpg?76460&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet001/Carpet001_SQ_Roughness.jpg?2732" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Color.jpg?77186&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Displacement.jpg?40339&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_NormalDX.jpg?26716&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Roughness.jpg?35583&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_AmbientOcclusion.jpg?59973" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Carpet015.jpg" alt="Carpet 015" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Carpet015" target="_blank" rel="noopener">Carpet 015</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Carpet015</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 40 cm × 40 cm (page)</dd>
+<dt>2K size</dt><dd>67.4 MB as the 2K-PNG zip a pull fetches; 33.0 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Carpet015" target="_blank" rel="noopener">https://ambientcg.com/view?id=Carpet015</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Color.jpg?77186&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Displacement.jpg?40339&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_NormalDX.jpg?26716&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_Roughness.jpg?35583&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Carpet015/Carpet015_SQ_AmbientOcclusion.jpg?59973" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="flooring_rubber_safety_matting">
+<header class="rh"><span class="num">11</span><h2>Rubber safety matting</h2><code class="key">flooring_rubber_safety_matting</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_rubber_safety_matting.jpg" alt="current look of Rubber safety matting" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_rubber_safety_matting.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “rubber matting”, 3 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">rubber_tiles is black rubber floor squares; rubberized_track is red running-track rubber. No studded matting (ambientCG&#x27;s four rubber sets are all computer-made).</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/rubber_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rubber_tiles" target="_blank" rel="noopener">Rubber Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rubber_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>71.5 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.1 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rubber_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/rubber_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rubber_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/rubberized_track" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rubberized_track" target="_blank" rel="noopener">Rubberized Track</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rubberized_track</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>78.7 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 17.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rubberized_track" target="_blank" rel="noopener">https://polyhaven.com/a/rubberized_track</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rubberized_track" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_epoxy_floor">
+<header class="rh"><span class="num">12</span><h2>Epoxy floor</h2><code class="key">flooring_epoxy_floor</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_epoxy_floor.jpg" alt="current look of Epoxy floor" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_epoxy_floor.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “epoxy floor”, 30 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">No epoxy floor in either library. Nearest: smooth painted concrete (grey, the closest colour), a sealed garage floor (beige) and smooth sealed concrete (red-brown), all without our fine speckle — weak fits.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Painted Concrete 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · painted_concrete_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>4 × 4 m (page: “4m wide”)</dd>
+<dt>2K size</dt><dd>61.8 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">https://polyhaven.com/a/painted_concrete_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/garage_floor" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/garage_floor" target="_blank" rel="noopener">Garage Floor</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · garage_floor</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.89 × 1.89 m (page: “1.9m wide”)</dd>
+<dt>2K size</dt><dd>73.7 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 13.6 MB as JPG</dd>
+<dt>Credit</dt><dd>Jenelle van Heerden (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/garage_floor" target="_blank" rel="noopener">https://polyhaven.com/a/garage_floor</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/garage_floor" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">Smooth Concrete Floor</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · smooth_concrete_floor</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>79.3 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 14.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">https://polyhaven.com/a/smooth_concrete_floor</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/smooth_concrete_floor" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="flooring_anti_slip_industrial_coating">
+<header class="rh"><span class="num">13</span><h2>Anti-slip industrial coating</h2><code class="key">flooring_anti_slip_industrial_coating</code></header>
+<div class="row"><figure class="cur"><img src="flooring_files/current_flooring_anti_slip_industrial_coating.jpg" alt="current look of Anti-slip industrial coating" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_flooring_anti_slip_industrial_coating.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “anti-slip coating”, 21 cells (style, room, tunnel)</small></figcaption></figure>
+<div class="ps"><p class="note">No grit-coated industrial floor as such. anti_slip_concrete has raised rings, anti_skid_tiles a fine grip texture; painted_concrete_02 is the smooth coated floor without the grit.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/anti_slip_concrete" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/anti_slip_concrete" target="_blank" rel="noopener">Anti Slip Concrete</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · anti_slip_concrete</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.5 × 2.5 m (page: “2.5m wide”)</dd>
+<dt>2K size</dt><dd>76.3 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 14.7 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/anti_slip_concrete" target="_blank" rel="noopener">https://polyhaven.com/a/anti_slip_concrete</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/anti_slip_concrete" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/anti_skid_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/anti_skid_tiles" target="_blank" rel="noopener">Anti Skid Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · anti_skid_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.8 × 1.8 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>69.4 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 12.9 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/anti_skid_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/anti_skid_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/anti_skid_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Painted Concrete 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · painted_concrete_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>4 × 4 m (page: “4m wide”)</dd>
+<dt>2K size</dt><dd>61.8 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">https://polyhaven.com/a/painted_concrete_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/painted_concrete_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="gap_terrazzo">
+<header class="rh"><span class="num">14</span><h2>Terrazzo</h2><span class="tag gap">GAP — proposed 16 Oct</span></header>
+<div class="row"><figure class="cur"><div class="ph-gap">No look in the game yet — a new entry the grid proposes</div>
+<figcaption><b>Not in the game</b><br><span class="g">GAP 16 Oct</span><br><small>Grid: GAP, 1 cell (style) — TRN-P Transport, premium (passenger stations, lift lobbies), the floor.</small></figcaption></figure>
+<div class="ps"><p class="note">Two real terrazzo photos. terrazzo_tiles is a fine brown-chip terrazzo in large tiles; Terrazzo019M a pale beige terrazzo with big stone chips (ambientCG also lists the same photo as 019L and 019S, at 0.8 m and 0.4 m). ambientCG&#x27;s other eighteen terrazzo sets are computer-made, so left off while photos exist.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/terrazzo_tiles" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/terrazzo_tiles" target="_blank" rel="noopener">Terrazzo Tiles</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · terrazzo_tiles</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>73.1 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 10.3 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/terrazzo_tiles" target="_blank" rel="noopener">https://polyhaven.com/a/terrazzo_tiles</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/terrazzo_tiles" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Color.jpg?64957&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Displacement.jpg?12137&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_NormalDX.jpg?59557&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Roughness.jpg?28652" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="flooring_files/acg_Terrazzo019M.jpg" alt="Terrazzo 019 M" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Terrazzo019M" target="_blank" rel="noopener">Terrazzo 019 M</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Terrazzo019M</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 65 cm × 65 cm (page)</dd>
+<dt>2K size</dt><dd>52.6 MB as the 2K-PNG zip a pull fetches; 17.4 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Terrazzo019M" target="_blank" rel="noopener">https://ambientcg.com/view?id=Terrazzo019M</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Color.jpg?64957&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Displacement.jpg?12137&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_NormalDX.jpg?59557&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Terrazzo019M/Terrazzo019M_SQ_Roughness.jpg?28652" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section>
+<footer><p><b>How this was checked.</b> Prospects came from each library's full catalogue (Poly Haven: all textures; ambientCG: every material; both fetched 16 Oct), chosen by eye from the thumbnails; the 10–11 Oct picks were kept where nothing better turned up. The licence line was read from each prospect's own page on 2026-10-16: every Poly Haven page shows “CC0 License” (and declares “CC0 1.0 Universal – public domain dedication, no attribution required”); every ambientCG page says “All assets are released under the Creative Commons CC0 license…”. ambientCG's technique and dimensions are copied from the page's <i>Technique</i> and <i>Dimensions</i> fields (the site spells procedural “Prodedural”). Poly Haven's real size is its <i>dimensions</i> field, with the page's “… wide” line beside it; its textures are scanned from real surfaces. Download sizes are the libraries' own file listings (Poly Haven's file API, ambientCG's download list); nothing was downloaded but the 256 px previews.</p>
+<p>Thumbnails are the libraries' own small previews (256 px), stored beside this page in <code>flooring_files/</code>. Current-look thumbnails are 256 px copies of the game's colour picture. The 3D viewer lives in <code>viewer/</code> and reads copies of the game's map files (same bytes, checksums shown).</p></footer>
+</main></body></html>

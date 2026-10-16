@@ -1,0 +1,318 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metal Scout</title><style>:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--mute:#6a6863;--line:#dedbd4;--photo:#1f7a4a;--photobg:#e2f2e8;--gen:#8a5a00;--genbg:#fbefd6;--link:#1d5fa8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}}
+:root[data-theme="dark"]{--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 64px}a{color:var(--link)}
+h1{font-size:28px;margin:0 0 4px}.lede{color:var(--mute);margin:0 0 16px;max-width:75ch}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:24px}
+.toc{columns:3 220px;padding-left:20px;margin:8px 0 24px}.toc li{break-inside:avoid;margin:2px 0}.toc span{font-size:12px;padding:0 6px;border-radius:8px}.ok{background:var(--photobg);color:var(--photo)}.gn{background:var(--genbg);color:var(--gen)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 18px}
+.rh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}.rh h2{margin:0;font-size:20px}.num{color:var(--mute);font-variant-numeric:tabular-nums}.key{color:var(--mute);font-size:12px}
+.row{display:grid;grid-template-columns:220px 1fr;gap:18px}@media (max-width:720px){.row{grid-template-columns:1fr}}
+.cur{margin:0}.cur img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.cur figcaption{overflow-wrap:anywhere;font-size:13px;margin-top:6px;color:var(--mute)}.cur b{color:var(--ink)}.g{font-weight:600;color:var(--ink)}
+.note{margin:0 0 10px;font-size:14px}.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.p{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.p.is-gen{border-style:dashed;border-color:var(--gen)}
+.p img{width:100%;height:160px;object-fit:contain;background:#181818;display:block}.pb{padding:10px 12px}.pb h4{margin:6px 0 6px;font-size:16px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px}.tag.photo{background:var(--photobg);color:var(--photo)}.tag.gen{background:var(--genbg);color:var(--gen)}
+dl{display:grid;grid-template-columns:76px 1fr;gap:3px 8px;margin:0;font-size:12.5px}dt{color:var(--mute)}dd{margin:0;overflow-wrap:anywhere}
+.none{color:var(--mute);font-style:italic}footer{color:var(--mute);font-size:13px;margin-top:28px;max-width:85ch}
+.cur a{display:block;width:200px}.p>a{display:block}
+.tag.pick{background:var(--link);color:var(--card)}.p.is-pick{border:2px solid var(--link)}.pulled-status{margin:0 0 10px;font-size:14px}
+details.pulled{margin:28px 0 0;border-top:1px solid var(--line);padding-top:12px}details.pulled>summary{cursor:pointer;font-size:20px;font-weight:600;margin:0 0 12px;padding:6px 0}
+
+.tag.gap{background:var(--link);color:var(--card)}.nr{background:var(--line);color:var(--ink)}
+.ph-gap{width:200px;height:200px;border-radius:8px;border:1px dashed var(--mute);display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:var(--mute);font-size:13px}
+.route{margin:0 0 10px;font-size:14px;padding:8px 10px;border-left:3px solid var(--gen);background:var(--genbg);border-radius:4px}
+.fit{font-size:12.5px;margin:0 0 6px;color:var(--ink)}
+</style><meta name="robots" content="noindex"><style>
+.pub-bar{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;color:var(--mute)}
+.pub-bar a{font-weight:600}
+.pub-out{display:flex;align-items:center;justify-content:center;text-align:center;height:160px;padding:12px;background:var(--bg);color:var(--mute);font-size:13px;border-bottom:1px solid var(--line)}
+.cur .pub-out{width:200px;height:200px;border:1px dashed var(--mute);border-radius:8px}
+</style></head><body><main><p class="pub-bar"><a href="./">← All scout pages</a> · Public copy, published 2026-10-16 11:48. Poly Haven’s previews are not copied (their site pictures are not CC0); the offline 3D viewer stays on the owner’s machine.</p>
+<h1>Metal scout — CC0 prospects</h1>
+<p class="lede">Every entry of Metal in the proposed surface list of 16 Oct (<code>docs/plans/SURFACE_LIST-proposed-2026-10-16.md</code>, d770ab5c) that the material grid uses (HIT) or proposes (GAP), less the entries already approved or under review, with up to three CC0 prospects from Poly Haven and ambientCG. Real photos are preferred; a generated (computer-made) set is listed only when neither library has a photo of that look, and it is marked. Rows with nothing real say so, with the likely route. Built 2026-10-16 by <code>scout metal</code> (the 16 Oct row set). Read-only: nothing in the game was changed and nothing was downloaded at full size.</p>
+<p class="lede"><b>Sizes:</b> <i>Real size</i> is the width one copy of the picture covers in the real world, as the library gives it. <i>2K size</i> is the download at 2K: what the project's pull (<code>tools/surface_photos.py</code>) would fetch — ambientCG's 2K-PNG zip, Poly Haven's 2K PNG maps — and the smaller JPG figure beside it.</p>
+<p class="lede"><b>3D:</b> an ambientCG prospect's picture opens ambientCG's own 3D preview; a Poly Haven prospect's page has its 3D preview. Our offline viewer of the game's own maps is not on this public copy.</p>
+<div class="stats"><div class="stat"><b>8</b>rows scouted (8 the grid uses, 0 it proposes; 26 entries in Metal)</div><div class="stat"><b>8</b>with at least one prospect</div><div class="stat"><b>4</b>with a real photo of the look</div><div class="stat"><b>3</b>generated only (route noted)</div><div class="stat"><b>1</b>no real match (route noted)</div></div>
+<details><summary>Left out (18)</summary><ul><li>Steel plate, clean — [UNUSED?] in the list (no grid cell uses it)</li><li>Steel plate, brushed — [UNUSED?] in the list (no grid cell uses it)</li><li>Riveted plate — [UNUSED?] in the list (no grid cell uses it)</li><li>Diamond / checker plate — approved</li><li>Corrugated steel wall — under review (pick corrugated_iron_03, pulled 2026-10-10)</li><li>Corrugated steel, rusted — [UNUSED?] in the list (no grid cell uses it)</li><li>Galvanised sheet — under review (pick ambientcg:Metal014, pulled 2026-10-10)</li><li>Aluminium panel — approved (pick ambientcg:Metal050C, pulled 2026-10-10)</li><li>Copper, new — [UNUSED?] in the list (no grid cell uses it)</li><li>Copper, patinated — [UNUSED?] in the list (no grid cell uses it)</li><li>Brass — [UNUSED?] in the list (no grid cell uses it)</li><li>Bronze — [UNUSED?] in the list (no grid cell uses it)</li><li>Cast iron — [UNUSED?] in the list (no grid cell uses it)</li><li>Corten / weathering steel — [UNUSED?] in the list (no grid cell uses it)</li><li>Rusted steel — [UNUSED?] in the list (no grid cell uses it)</li><li>Perforated metal — [UNUSED?] in the list (no grid cell uses it)</li><li>Wire mesh / rebar grid — [UNUSED?] in the list (no grid cell uses it)</li><li>Ductwork / HVAC panel — under review (pick ambientcg:Metal044B, pulled 2026-10-10)</li></ul></details>
+<ol class="toc"><li><a href="#metal_steel_plate_painted">Steel plate, painted</a> <span class="ok">photo</span></li><li><a href="#metal_welded_seam_plate">Welded seam plate</a> <span class="ok">photo</span></li><li><a href="#metal_stainless_panel">Stainless panel</a> <span class="gn">generated only</span></li><li><a href="#metal_expanded_mesh">Expanded metal mesh</a> <span class="gn">generated only</span></li><li><a href="#metal_chain_link">Chain link</a> <span class="gn">generated only</span></li><li><a href="#metal_bar_grating">Bar grating</a> <span class="nr">no real match</span></li><li><a href="#metal_industrial_paint_safety_yellow">Industrial paint, safety yellow</a> <span class="ok">photo</span></li><li><a href="#metal_industrial_paint_machine_grey">Industrial paint, machine grey</a> <span class="ok">photo</span></li></ol>
+<section id="metal_steel_plate_painted">
+<header class="rh"><span class="num">01</span><h2>Steel plate, painted</h2><code class="key">metal_steel_plate_painted</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_steel_plate_painted.jpg" alt="current look of Steel plate, painted" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_paint2.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “painted steel”, 14 cells (style, room, player)</small></figcaption></figure>
+<div class="ps"><p class="note">blue_metal_plate is a near-match: scratched blue-painted steel plate, our colour. green_metal_rust is green paint with light rust; rusty_metal_02 is pale grey paint flaking over a lot of rust, far more worn than ours.</p><div class="pgrid"><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">Blue Metal Plate</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · blue_metal_plate</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.5 × 2.5 m (page: “2.5m wide”)</dd>
+<dt>2K size</dt><dd>54.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 5.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">https://polyhaven.com/a/blue_metal_plate</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/green_metal_rust" target="_blank" rel="noopener">Green Metal Rust</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · green_metal_rust</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1 × 1 m (page: “1m wide”)</dd>
+<dt>2K size</dt><dd>30.5 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 3.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/green_metal_rust" target="_blank" rel="noopener">https://polyhaven.com/a/green_metal_rust</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">Rusty Metal 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rusty_metal_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1 × 1 m (page: “1m wide”)</dd>
+<dt>2K size</dt><dd>25.2 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 6.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">https://polyhaven.com/a/rusty_metal_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="metal_welded_seam_plate">
+<header class="rh"><span class="num">02</span><h2>Welded seam plate</h2><code class="key">metal_welded_seam_plate</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_welded_seam_plate.jpg" alt="current look of Welded seam plate" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_weld3.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “welded steel plate”, 12 cells (room, player)</small></figcaption></figure>
+<div class="ps"><p class="note">Photos of steel plates joined at seams (metal_plate_02) and a painted plate with bars welded on (rusty_metal_grid). No photo shows a clean weld bead like our drawing&#x27;s.</p><div class="pgrid"><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/metal_plate_02" target="_blank" rel="noopener">Metal Plate 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · metal_plate_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>68.4 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 12.1 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/metal_plate_02" target="_blank" rel="noopener">https://polyhaven.com/a/metal_plate_02</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/rusty_metal_grid" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rusty_metal_grid" target="_blank" rel="noopener">Rusty Metal Grid</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rusty_metal_grid</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.8 × 1.8 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>66.4 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 9.6 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rusty_metal_grid" target="_blank" rel="noopener">https://polyhaven.com/a/rusty_metal_grid</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rusty_metal_grid" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="metal_stainless_panel">
+<header class="rh"><span class="num">03</span><h2>Stainless panel</h2><code class="key">metal_stainless_panel</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_stainless_panel.jpg" alt="current look of Stainless panel" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">generated-allowed · OUTLIER</span> · status original<br>Metal 012 by ambientCG (ambientCG) — <a href="https://ambientcg.com/a/Metal012" target="_blank" rel="noopener">page</a><br><small>Thumbnail: photo-materials picture (what the game shows with Photo materials on)</small><br><small>Grid: HIT as “stainless sheet”, 24 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="route"><b>Likely route:</b> Nothing real. Keep the allowed generated set, or a Material Maker build (brushed streak noise and panel seams) if a home-made look is wanted. No photo route.</p><p class="note">No real-photo stainless in either library: ambientCG&#x27;s only metal photos are a dark aged steel (Metal063), tread plate, walkways and drain covers, and every Poly Haven metal is painted, rusted, corrugated or tread plate. The game already wears a generated set here (ambientCG Metal012, allowed by the owner on 8 Oct); these are other generated stainless-type sets.</p><div class="pgrid"><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Color.jpg?17895&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Displacement.jpg?23283&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_NormalDX.jpg?93762&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Roughness.jpg?99820&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Metalness.jpg?34770" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Metal049B.jpg" alt="Metal 049 B" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Metal049B" target="_blank" rel="noopener">Metal 049 B</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Metal049B</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>37.5 MB as the 2K-PNG zip a pull fetches; 7.9 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Metal049B" target="_blank" rel="noopener">https://ambientcg.com/view?id=Metal049B</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Color.jpg?17895&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Displacement.jpg?23283&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_NormalDX.jpg?93762&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Roughness.jpg?99820&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal049B/Metal049B_SQ_Metalness.jpg?34770" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Color.jpg?53619&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Displacement.jpg?6786&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_NormalDX.jpg?39842&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Roughness.jpg?66645&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Metalness.jpg?52188" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Metal044A.jpg" alt="Metal 044 A" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Metal044A" target="_blank" rel="noopener">Metal 044 A</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Metal044A</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>42.3 MB as the 2K-PNG zip a pull fetches; 9.1 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Metal044A" target="_blank" rel="noopener">https://ambientcg.com/view?id=Metal044A</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Color.jpg?53619&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Displacement.jpg?6786&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_NormalDX.jpg?39842&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Roughness.jpg?66645&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Metal044A/Metal044A_SQ_Metalness.jpg?52188" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<img src="metal_files/acg_Metal011.jpg" alt="Metal 011" width="160" height="160">
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Metal011" target="_blank" rel="noopener">Metal 011</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Metal011</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>49.2 MB as the 2K-PNG zip a pull fetches; 15.0 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Metal011" target="_blank" rel="noopener">https://ambientcg.com/view?id=Metal011</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article></div></div></div></section><section id="metal_expanded_mesh">
+<header class="rh"><span class="num">04</span><h2>Expanded metal mesh</h2><code class="key">metal_expanded_mesh</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_expanded_mesh.jpg" alt="current look of Expanded metal mesh" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_see.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “expanded metal mesh”, 1 cell (room)</small></figcaption></figure>
+<div class="ps"><p class="route"><b>Likely route:</b> Nothing real. Material Maker is the likely route: a diamond lattice with a cut-out mask is a simple procedural build and gives true expanded-metal diamonds, which the generated walkways do not.</p><p class="note">No real-photo expanded mesh. ambientCG&#x27;s generated slotted walkways are the nearest; their openings are rounded slots, not the diamond openings of expanded metal.</p><div class="pgrid"><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Color.jpg?93603&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Displacement.jpg?34309&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_NormalDX.jpg?94890&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Roughness.jpg?85338&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Opacity.jpg?54235&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Metalness.jpg?54875" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_MetalWalkway010.jpg" alt="Metal Walkway 010" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=MetalWalkway010" target="_blank" rel="noopener">Metal Walkway 010</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · MetalWalkway010</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>37.9 MB as the 2K-PNG zip a pull fetches; 18.6 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=MetalWalkway010" target="_blank" rel="noopener">https://ambientcg.com/view?id=MetalWalkway010</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Color.jpg?93603&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Displacement.jpg?34309&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_NormalDX.jpg?94890&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Roughness.jpg?85338&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Opacity.jpg?54235&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway010/MetalWalkway010_SQ_Metalness.jpg?54875" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Color.jpg?18537&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Displacement.jpg?55497&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_NormalDX.jpg?80044&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Roughness.jpg?50846&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Opacity.jpg?19475&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Metalness.jpg?58291" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_MetalWalkway011.jpg" alt="Metal Walkway 011" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=MetalWalkway011" target="_blank" rel="noopener">Metal Walkway 011</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · MetalWalkway011</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>37.9 MB as the 2K-PNG zip a pull fetches; 18.3 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=MetalWalkway011" target="_blank" rel="noopener">https://ambientcg.com/view?id=MetalWalkway011</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Color.jpg?18537&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Displacement.jpg?55497&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_NormalDX.jpg?80044&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Roughness.jpg?50846&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Opacity.jpg?19475&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway011/MetalWalkway011_SQ_Metalness.jpg?58291" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Color.jpg?94799&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Displacement.jpg?13597&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_NormalDX.jpg?79169&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Roughness.jpg?78024&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Opacity.jpg?58315&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Metalness.jpg?63853" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_MetalWalkway012.jpg" alt="Metal Walkway 012" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=MetalWalkway012" target="_blank" rel="noopener">Metal Walkway 012</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · MetalWalkway012</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>38.6 MB as the 2K-PNG zip a pull fetches; 19.3 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=MetalWalkway012" target="_blank" rel="noopener">https://ambientcg.com/view?id=MetalWalkway012</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Color.jpg?94799&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Displacement.jpg?13597&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_NormalDX.jpg?79169&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Roughness.jpg?78024&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Opacity.jpg?58315&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway012/MetalWalkway012_SQ_Metalness.jpg?63853" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="metal_chain_link">
+<header class="rh"><span class="num">05</span><h2>Chain link</h2><code class="key">metal_chain_link</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_chain_link.jpg" alt="current look of Chain link" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_see.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “chain link”, 1 cell (room)</small></figcaption></figure>
+<div class="ps"><p class="route"><b>Likely route:</b> Nothing real. The generated sets fit well; Material Maker could also tile the woven diamond with a cut-out mask. A photo would have to be captured.</p><p class="note">No photo of chain-link fence in either library. Generated see-through chain-link fences instead (Fence001 is green-coated).</p><div class="pgrid"><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Color.jpg?17661&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Displacement.jpg?45870&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_NormalDX.jpg?83782&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Roughness.jpg?28450&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Opacity.jpg?15821&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Metalness.jpg?1403" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Fence003.jpg" alt="Fence 003" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Fence003" target="_blank" rel="noopener">Fence 003</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Fence003</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>23.2 MB as the 2K-PNG zip a pull fetches; 16.8 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Fence003" target="_blank" rel="noopener">https://ambientcg.com/view?id=Fence003</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Color.jpg?17661&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Displacement.jpg?45870&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_NormalDX.jpg?83782&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Roughness.jpg?28450&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Opacity.jpg?15821&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence003/Fence003_SQ_Metalness.jpg?1403" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Color.jpg?32179&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Displacement.jpg?90396&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_NormalDX.jpg?49487&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Roughness.jpg?74524&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Opacity.jpg?51491&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Metalness.jpg?67367" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Fence004.jpg" alt="Fence 004" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Fence004" target="_blank" rel="noopener">Fence 004</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Fence004</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>20.4 MB as the 2K-PNG zip a pull fetches; 15.0 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Fence004" target="_blank" rel="noopener">https://ambientcg.com/view?id=Fence004</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Color.jpg?32179&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Displacement.jpg?90396&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_NormalDX.jpg?49487&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Roughness.jpg?74524&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Opacity.jpg?51491&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence004/Fence004_SQ_Metalness.jpg?67367" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Color.jpg?63600&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Displacement.jpg?29770&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_NormalDX.jpg?85105&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Roughness.jpg?81992&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Opacity.jpg?54507&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Metalness.jpg?92209" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Fence001.jpg" alt="Fence 001" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=Fence001" target="_blank" rel="noopener">Fence 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Fence001</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>24.0 MB as the 2K-PNG zip a pull fetches; 18.3 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Fence001" target="_blank" rel="noopener">https://ambientcg.com/view?id=Fence001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Color.jpg?63600&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Displacement.jpg?29770&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_NormalDX.jpg?85105&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Roughness.jpg?81992&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Opacity.jpg?54507&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Fence001/Fence001_SQ_Metalness.jpg?92209" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="metal_bar_grating">
+<header class="rh"><span class="num">06</span><h2>Bar grating</h2><code class="key">metal_bar_grating</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_bar_grating.jpg" alt="current look of Bar grating" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_see.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “bar grating”, 4 cells (room, tunnel)</small></figcaption></figure>
+<div class="ps"><p class="route"><b>Likely route:</b> No real repeating grating. The generated grid, or Material Maker (load bars plus cross rods with a cut-out mask).</p><p class="note">No photo of a repeating bar-grating floor. Both photos are single drain covers cut out as stickers. MetalWalkway001 is a generated bar grid that does repeat.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Color.jpg?36863&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Displacement.jpg?39857&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_NormalDX.jpg?69222&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Roughness.jpg?16015&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Opacity.jpg?30732&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_AmbientOcclusion.jpg?80771&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Metalness.jpg?18282" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Grate002.jpg" alt="Grate 002" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Grate002" target="_blank" rel="noopener">Grate 002</a></h4><p class="fit">Weak: one drain cover cut out as a sticker; does not repeat across a floor.</p>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Grate002</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>36.3 MB as the 2K-PNG zip a pull fetches; 15.1 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Grate002" target="_blank" rel="noopener">https://ambientcg.com/view?id=Grate002</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Color.jpg?36863&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Displacement.jpg?39857&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_NormalDX.jpg?69222&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Roughness.jpg?16015&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Opacity.jpg?30732&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_AmbientOcclusion.jpg?80771&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate002/Grate002_SQ_Metalness.jpg?18282" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Color.jpg?68091&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Displacement.jpg?81519&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_NormalDX.jpg?17006&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Roughness.jpg?85028&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Opacity.jpg?73519&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_AmbientOcclusion.jpg?91105&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Metalness.jpg?64343" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_Grate001.jpg" alt="Grate 001" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/view?id=Grate001" target="_blank" rel="noopener">Grate 001</a></h4><p class="fit">Weak: one drain cover cut out as a sticker; does not repeat across a floor.</p>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Grate001</code></dd>
+<dt>Technique</dt><dd>Real photo — approximated from one photo (page says “Approximation”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 65 cm × 65 cm (page)</dd>
+<dt>2K size</dt><dd>60.4 MB as the 2K-PNG zip a pull fetches; 24.3 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=Grate001" target="_blank" rel="noopener">https://ambientcg.com/view?id=Grate001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Color.jpg?68091&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Displacement.jpg?81519&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_NormalDX.jpg?17006&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Roughness.jpg?85028&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Opacity.jpg?73519&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_AmbientOcclusion.jpg?91105&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Grate001/Grate001_SQ_Metalness.jpg?64343" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Color.jpg?5164&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Displacement.jpg?99914&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_NormalDX.jpg?25809&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Roughness.jpg?51106&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Opacity.jpg?12004&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Metalness.jpg?94680" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="metal_files/acg_MetalWalkway001.jpg" alt="Metal Walkway 001" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/view?id=MetalWalkway001" target="_blank" rel="noopener">Metal Walkway 001</a></h4><p class="fit">Generated, listed because no photo of a repeating grating exists: a square bar grid that tiles.</p>
+<dl><dt>Library ID</dt><dd><code>ambientCG · MetalWalkway001</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>Not given (the page lists no dimensions)</dd>
+<dt>2K size</dt><dd>25.6 MB as the 2K-PNG zip a pull fetches; 17.1 MB as 2K-JPG</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/view?id=MetalWalkway001" target="_blank" rel="noopener">https://ambientcg.com/view?id=MetalWalkway001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Color.jpg?5164&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Displacement.jpg?99914&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_NormalDX.jpg?25809&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Roughness.jpg?51106&amp;opacity_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Opacity.jpg?12004&amp;metalness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/MetalWalkway001/MetalWalkway001_SQ_Metalness.jpg?94680" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="metal_industrial_paint_safety_yellow">
+<header class="rh"><span class="num">07</span><h2>Industrial paint, safety yellow</h2><code class="key">metal_industrial_paint_safety_yellow</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_industrial_paint_safety_yellow.jpg" alt="current look of Industrial paint, safety yellow" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_metal_industrial_paint_safety_yellow.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “safety yellow paint”, 17 cells (style, room)</small></figcaption></figure>
+<div class="ps"><p class="note">rusty_metal_03 is yellow-painted steel, rusted much more heavily than the current look. blue_metal_plate is clean painted plate that would need its colour changing to yellow.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/rusty_metal_03" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rusty_metal_03" target="_blank" rel="noopener">Rusty Metal 03</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rusty_metal_03</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.35 × 1.35 m (page: “1.4m wide”)</dd>
+<dt>2K size</dt><dd>70.0 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 11.7 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rusty_metal_03" target="_blank" rel="noopener">https://polyhaven.com/a/rusty_metal_03</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rusty_metal_03" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">Blue Metal Plate</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · blue_metal_plate</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.5 × 2.5 m (page: “2.5m wide”)</dd>
+<dt>2K size</dt><dd>54.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 5.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">https://polyhaven.com/a/blue_metal_plate</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article></div></div></div></section><section id="metal_industrial_paint_machine_grey">
+<header class="rh"><span class="num">08</span><h2>Industrial paint, machine grey</h2><code class="key">metal_industrial_paint_machine_grey</code></header>
+<div class="row"><figure class="cur"><img src="metal_files/current_metal_industrial_paint_machine_grey.jpg" alt="current look of Industrial paint, machine grey" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · status original<br>drawn by code: dino_game_rnd/surface_gen/gen_metal_industrial_paint_machine_grey.py<br><small>Thumbnail: the game&#x27;s drawn picture</small><br><small>Grid: HIT as “machine grey paint”, 20 cells (style, room, player)</small></figcaption></figure>
+<div class="ps"><p class="note">No clean grey painted-steel photo. rusty_metal_02 is pale grey paint, but flaking over a lot of rust; blue_metal_plate and green_metal_rust are cleaner painted plate that would need recolouring to grey.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">Rusty Metal 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · rusty_metal_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1 × 1 m (page: “1m wide”)</dd>
+<dt>2K size</dt><dd>25.2 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 6.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">https://polyhaven.com/a/rusty_metal_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/rusty_metal_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">Blue Metal Plate</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · blue_metal_plate</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.5 × 2.5 m (page: “2.5m wide”)</dd>
+<dt>2K size</dt><dd>54.9 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 5.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/blue_metal_plate" target="_blank" rel="noopener">https://polyhaven.com/a/blue_metal_plate</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/green_metal_rust" target="_blank" rel="noopener">Green Metal Rust</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · green_metal_rust</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1 × 1 m (page: “1m wide”)</dd>
+<dt>2K size</dt><dd>30.5 MB as PNG — the 5 maps a pull fetches (Diffuse, nor_gl, Rough, AO, arm); 3.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel (all roles)</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/green_metal_rust" target="_blank" rel="noopener">https://polyhaven.com/a/green_metal_rust</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article></div></div></div></section>
+<footer><p><b>How this was checked.</b> Prospects came from each library's full catalogue (Poly Haven: all textures; ambientCG: every material; both fetched 16 Oct), chosen by eye from the thumbnails; the 10–11 Oct picks were kept where nothing better turned up. The licence line was read from each prospect's own page on 2026-10-16: every Poly Haven page shows “CC0 License” (and declares “CC0 1.0 Universal – public domain dedication, no attribution required”); every ambientCG page says “All assets are released under the Creative Commons CC0 license…”. ambientCG's technique and dimensions are copied from the page's <i>Technique</i> and <i>Dimensions</i> fields (the site spells procedural “Prodedural”). Poly Haven's real size is its <i>dimensions</i> field, with the page's “… wide” line beside it; its textures are scanned from real surfaces. Download sizes are the libraries' own file listings (Poly Haven's file API, ambientCG's download list); nothing was downloaded but the 256 px previews.</p>
+<p>Thumbnails are the libraries' own small previews (256 px), stored beside this page in <code>metal_files/</code>. Current-look thumbnails are 256 px copies of the game's colour picture. The 3D viewer lives in <code>viewer/</code> and reads copies of the game's map files (same bytes, checksums shown).</p></footer>
+</main></body></html>

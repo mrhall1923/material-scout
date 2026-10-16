@@ -1,0 +1,348 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roofing Scout</title><style>:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--mute:#6a6863;--line:#dedbd4;--photo:#1f7a4a;--photobg:#e2f2e8;--gen:#8a5a00;--genbg:#fbefd6;--link:#1d5fa8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}}
+:root[data-theme="dark"]{--bg:#161615;--card:#211f1d;--ink:#ecebe7;--mute:#a19e97;--line:#3a3834;--photo:#7ed3a0;--photobg:#183526;--gen:#f0c16b;--genbg:#3a2c12;--link:#8ab8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 64px}a{color:var(--link)}
+h1{font-size:28px;margin:0 0 4px}.lede{color:var(--mute);margin:0 0 16px;max-width:75ch}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:24px}
+.toc{columns:3 220px;padding-left:20px;margin:8px 0 24px}.toc li{break-inside:avoid;margin:2px 0}.toc span{font-size:12px;padding:0 6px;border-radius:8px}.ok{background:var(--photobg);color:var(--photo)}.gn{background:var(--genbg);color:var(--gen)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 18px}
+.rh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}.rh h2{margin:0;font-size:20px}.num{color:var(--mute);font-variant-numeric:tabular-nums}.key{color:var(--mute);font-size:12px}
+.row{display:grid;grid-template-columns:220px 1fr;gap:18px}@media (max-width:720px){.row{grid-template-columns:1fr}}
+.cur{margin:0}.cur img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.cur figcaption{overflow-wrap:anywhere;font-size:13px;margin-top:6px;color:var(--mute)}.cur b{color:var(--ink)}.g{font-weight:600;color:var(--ink)}
+.note{margin:0 0 10px;font-size:14px}.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.p{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.p.is-gen{border-style:dashed;border-color:var(--gen)}
+.p img{width:100%;height:160px;object-fit:contain;background:#181818;display:block}.pb{padding:10px 12px}.pb h4{margin:6px 0 6px;font-size:16px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:6px}.tag.photo{background:var(--photobg);color:var(--photo)}.tag.gen{background:var(--genbg);color:var(--gen)}
+dl{display:grid;grid-template-columns:76px 1fr;gap:3px 8px;margin:0;font-size:12.5px}dt{color:var(--mute)}dd{margin:0;overflow-wrap:anywhere}
+.none{color:var(--mute);font-style:italic}footer{color:var(--mute);font-size:13px;margin-top:28px;max-width:85ch}
+.cur a{display:block;width:200px}.p>a{display:block}
+.tag.pick{background:var(--link);color:var(--card)}.p.is-pick{border:2px solid var(--link)}.pulled-status{margin:0 0 10px;font-size:14px}
+details.pulled{margin:28px 0 0;border-top:1px solid var(--line);padding-top:12px}details.pulled>summary{cursor:pointer;font-size:20px;font-weight:600;margin:0 0 12px;padding:6px 0}
+</style><meta name="robots" content="noindex"><style>
+.pub-bar{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;color:var(--mute)}
+.pub-bar a{font-weight:600}
+.pub-out{display:flex;align-items:center;justify-content:center;text-align:center;height:160px;padding:12px;background:var(--bg);color:var(--mute);font-size:13px;border-bottom:1px solid var(--line)}
+.cur .pub-out{width:200px;height:200px;border:1px dashed var(--mute);border-radius:8px}
+</style></head><body><main><p class="pub-bar"><a href="./">← All scout pages</a> · Public copy, published 2026-10-16 11:48. Poly Haven’s previews are not copied (their site pictures are not CC0); the offline 3D viewer stays on the owner’s machine.</p>
+<h1>Roofing scout — CC0 prospects</h1>
+<p class="lede">Every Roofing row that the 16 Oct material grid uses or proposes (<code>docs/plans/SURFACE_LIST-proposed-2026-10-16.md</code>, commit d770ab5c), with up to three CC0 prospects from Poly Haven and ambientCG. The first card in each row is the best fit. Real photos are preferred; a generated (computer-made) set is listed only when neither library has a photo of that look, and it is marked. Built 2026-10-16 by the <code>scout roofing</code> trigger, run read-only: nothing in the game or the records changed and nothing was downloaded at full size.</p>
+<p class="lede"><b>3D:</b> an ambientCG prospect's picture opens ambientCG's own 3D preview; a Poly Haven prospect's page has its 3D preview. Our offline viewer of the game's own maps is not on this public copy.</p>
+<div class="stats"><div class="stat"><b>9</b>rows scouted (of 13 looks in Roofing)</div><div class="stat"><b>5</b>with a real photo of the look</div><div class="stat"><b>4</b>with nothing real (weak fits, generated or none)</div><div class="stat"><b>24</b>prospects</div></div>
+<p class="lede">Left out — marked [UNUSED?] in the list (no grid cell uses them): Clay barrel tile, Concrete roof tile, Thatch, Solar panel.</p>
+<ol class="toc"><li><a href="#roofing_asphalt_shingle_3_tab">Asphalt shingle, 3-tab</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#roofing_asphalt_shingle_architectural">Asphalt shingle, architectural</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#roofing_wood_shake">Wood shake</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#roofing_slate_roof">Slate roof</a> <span class="ok">photo</span></li><li><a href="#roofing_standing_seam_metal">Standing seam metal</a> <span class="gn">weak fit — nothing real</span></li><li><a href="#roofing_corrugated_metal_roof">Corrugated metal roof</a> <span class="ok">photo</span></li><li><a href="#roofing_rolled_tar_roofing">Rolled / tar roofing</a> <span class="ok">photo</span></li><li><a href="#roofing_built_up_gravel_roof">Built-up gravel roof</a> <span class="ok">photo</span></li><li><a href="#roofing_sod_green_roof">Sod / green roof</a> <span class="ok">photo</span></li></ol>
+<section id="roofing_asphalt_shingle_3_tab">
+<header class="rh"><span class="num">01</span><h2>Asphalt shingle, 3-tab</h2><code class="key">roofing_asphalt_shingle_3_tab</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_asphalt_shingle_3_tab.jpg" alt="current look of Asphalt shingle, 3-tab" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_asphalt_shingle_3_tab.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No asphalt shingle in either library. grey_roof_01 is dark flat interlocking tiles in staggered rows that read like 3-tab from a distance; bitumen is the asphalt roofing material itself, with no tabs. Both weak. ambientCG&#x27;s RoofingTiles sets are computer-made slate and clay tiles, not shingles.</p><p class="note"><b>Route:</b> Material Maker is the likely route: granule noise (bitumen&#x27;s grain) under a staggered tab layout with shadow lines.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">Grey Roof 01</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · grey_roof_01</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>8 m × 8 m (page: “8m wide”)</dd>
+<dt>2K size</dt><dd>75 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 6.1 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">https://polyhaven.com/a/grey_roof_01</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Bitumen</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · bitumen</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>20 m × 20 m (page: “20m wide”)</dd>
+<dt>2K size</dt><dd>75 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 8.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">https://polyhaven.com/a/bitumen</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_asphalt_shingle_architectural">
+<header class="rh"><span class="num">02</span><h2>Asphalt shingle, architectural</h2><code class="key">roofing_asphalt_shingle_architectural</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_asphalt_shingle_architectural.jpg" alt="current look of Asphalt shingle, architectural" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_asphalt_shingle_architectural.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No asphalt shingle in either library. roof_slates_02&#x27;s uneven overlapping grey-brown slates have the ragged look of laminated shingles; grey_roof_01 and bitumen as for 3-tab. All weak.</p><p class="note"><b>Route:</b> Material Maker is the likely route: the 3-tab build with random tab widths and a darker shadow band.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">Roof Slates 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · roof_slates_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 m × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>83 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 8.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">https://polyhaven.com/a/roof_slates_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">Grey Roof 01</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · grey_roof_01</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>8 m × 8 m (page: “8m wide”)</dd>
+<dt>2K size</dt><dd>75 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 6.1 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">https://polyhaven.com/a/grey_roof_01</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/grey_roof_01" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Bitumen</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · bitumen</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>20 m × 20 m (page: “20m wide”)</dd>
+<dt>2K size</dt><dd>75 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 8.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">https://polyhaven.com/a/bitumen</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_wood_shake">
+<header class="rh"><span class="num">03</span><h2>Wood shake</h2><code class="key">roofing_wood_shake</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_wood_shake.jpg" alt="current look of Wood shake" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_wood_shake.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No photo of wood shakes or shingles in either library. WoodSiding013 and WoodSiding011 are computer-made wood shingles, close to our drawing, listed because no photo exists. exterior_wall_cladding_02 is a real photo of small staggered boards, a weak stand-in.</p><p class="note"><b>Route:</b> The computer-made sets are near-exact; a computer-made pick needs your ruling (GENERATED_ALLOWED). Otherwise material Maker is the likely route: staggered shake rows over a real plank photo&#x27;s grain.</p><div class="pgrid"><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Color.jpg?7474&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Displacement.jpg?6117&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_NormalDX.jpg?21976&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Roughness.jpg?60901&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_AmbientOcclusion.jpg?59125" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="roofing_files/acg_WoodSiding013.jpg" alt="Wood Siding 013" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/a/WoodSiding013" target="_blank" rel="noopener">Wood Siding 013</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · WoodSiding013</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.4 m × 1.4 m (page)</dd>
+<dt>2K size</dt><dd>63 MB 2K-PNG zip · 27 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/WoodSiding013" target="_blank" rel="noopener">https://ambientcg.com/a/WoodSiding013</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Color.jpg?7474&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Displacement.jpg?6117&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_NormalDX.jpg?21976&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_Roughness.jpg?60901&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding013/WoodSiding013_SQ_AmbientOcclusion.jpg?59125" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p is-gen">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_Color.jpg?76449&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_Displacement.jpg?47134&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_NormalDX.jpg?26562" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="roofing_files/acg_WoodSiding011.jpg" alt="Wood Siding 011" width="160" height="160"></a>
+<div class="pb"><span class="tag gen">GENERATED — no photo exists</span>
+<h4><a href="https://ambientcg.com/a/WoodSiding011" target="_blank" rel="noopener">Wood Siding 011</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · WoodSiding011</code></dd>
+<dt>Technique</dt><dd>Generated — procedural (computer-made) (page says “Prodedural”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 1.4 m × 1.4 m (page)</dd>
+<dt>2K size</dt><dd>59 MB 2K-PNG zip · 23 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/WoodSiding011" target="_blank" rel="noopener">https://ambientcg.com/a/WoodSiding011</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_Color.jpg?76449&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_Displacement.jpg?47134&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/WoodSiding011/WoodSiding011_SQ_NormalDX.jpg?26562" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/exterior_wall_cladding_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/exterior_wall_cladding_02" target="_blank" rel="noopener">Exterior Wall Cladding 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · exterior_wall_cladding_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.99 m × 1.99 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>70 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 9.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Charlotte Baglioni</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/exterior_wall_cladding_02" target="_blank" rel="noopener">https://polyhaven.com/a/exterior_wall_cladding_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/exterior_wall_cladding_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_slate_roof">
+<header class="rh"><span class="num">04</span><h2>Slate roof</h2><code class="key">roofing_slate_roof</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_slate_roof.jpg" alt="current look of Slate roof" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_slate_roof.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">Photos of slate roofs. roof_slates_03 is even grey slates in regular rows like ours; grey_roof_tiles_02 has the blue-grey with moss in the seams; roof_slates_02 is uneven, grey-brown.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/roof_slates_03" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/roof_slates_03" target="_blank" rel="noopener">Roof Slates 03</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · roof_slates_03</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 m × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>70 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 11 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/roof_slates_03" target="_blank" rel="noopener">https://polyhaven.com/a/roof_slates_03</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/roof_slates_03" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/grey_roof_tiles_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/grey_roof_tiles_02" target="_blank" rel="noopener">Grey Roof Tiles 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · grey_roof_tiles_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.5 m × 1.5 m (page: “1.5m wide”)</dd>
+<dt>2K size</dt><dd>83 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 7.5 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/grey_roof_tiles_02" target="_blank" rel="noopener">https://polyhaven.com/a/grey_roof_tiles_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/grey_roof_tiles_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">Roof Slates 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · roof_slates_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 m × 3 m (page: “3m wide”)</dd>
+<dt>2K size</dt><dd>83 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 8.4 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">https://polyhaven.com/a/roof_slates_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/roof_slates_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_standing_seam_metal">
+<header class="rh"><span class="num">05</span><h2>Standing seam metal</h2><code class="key">roofing_standing_seam_metal</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_standing_seam_metal.jpg" alt="current look of Standing seam metal" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_standing_seam_metal.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag gen">WEAK FIT — NOTHING REAL</span></p><p class="note">No standing-seam roof in either library. box_profile_metal_sheet is the nearest real photo: painted steel roofing, but with trapezoidal box ribs close together and red, where standing seam has flat pans and a thin raised seam every 40–60 cm. Weak.</p><p class="note"><b>Route:</b> Material Maker is the likely route: a flat steel pan with a raised seam line; the flat steel already under review in Metal (Metal014) could give the metal.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/box_profile_metal_sheet" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/box_profile_metal_sheet" target="_blank" rel="noopener">Box Profile Metal Sheet</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · box_profile_metal_sheet</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 m × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>70 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 11 MB as JPG</dd>
+<dt>Credit</dt><dd>Amal Kumar</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/box_profile_metal_sheet" target="_blank" rel="noopener">https://polyhaven.com/a/box_profile_metal_sheet</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/box_profile_metal_sheet" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_corrugated_metal_roof">
+<header class="rh"><span class="num">06</span><h2>Corrugated metal roof</h2><code class="key">roofing_corrugated_metal_roof</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_corrugated_metal_roof.jpg" alt="current look of Corrugated metal roof" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_corrugated_metal_roof.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">Photos of galvanised corrugated roofing. corrugated_iron has our weathered silver with rust streaks; corrugated_iron_02 is cleaner with wider ribs; worn_corrugated_iron has peeling paint. (corrugated_iron_03 is already pulled for Metal&#x27;s corrugated steel wall.)</p><div class="pgrid"><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/corrugated_iron" target="_blank" rel="noopener">Corrugated Iron</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · corrugated_iron</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.12 m × 1.12 m (page: “1.1m wide”)</dd>
+<dt>2K size</dt><dd>60 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 10 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva Photography; Jenelle van Heerden Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/corrugated_iron" target="_blank" rel="noopener">https://polyhaven.com/a/corrugated_iron</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/corrugated_iron_02" target="_blank" rel="noopener">Corrugated Iron 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · corrugated_iron_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.7 m × 2.7 m (page: “2.7m wide”)</dd>
+<dt>2K size</dt><dd>77 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 13 MB as JPG</dd>
+<dt>Credit</dt><dd>Jenelle van Heerden Processing; Sergej Majboroda Photography</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/corrugated_iron_02" target="_blank" rel="noopener">https://polyhaven.com/a/corrugated_iron_02</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/worn_corrugated_iron" target="_blank" rel="noopener">Worn Corrugated Iron</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · worn_corrugated_iron</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.8 m × 1.8 m (page: “1.8m wide”)</dd>
+<dt>2K size</dt><dd>80 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 15 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva Photography; Jenelle van Heerden Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/worn_corrugated_iron" target="_blank" rel="noopener">https://polyhaven.com/a/worn_corrugated_iron</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article></div></div></div></section><section id="roofing_rolled_tar_roofing">
+<header class="rh"><span class="num">07</span><h2>Rolled / tar roofing</h2><code class="key">roofing_rolled_tar_roofing</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_rolled_tar_roofing.jpg" alt="current look of Rolled / tar roofing" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_rolled_tar_roofing.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">bitumen is a photo of a real bitumen roof, cracked tar with horizontal streaks (20 m wide, so its detail is coarse at 2K). clean_asphalt (dark, fine grain, a faint seam) and Asphalt031 (light grey grit) are road photos whose grit stands in for mineral-surfaced roll roofing. None shows the lap lines every ~0.9 m.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Bitumen</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · bitumen</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>20 m × 20 m (page: “20m wide”)</dd>
+<dt>2K size</dt><dd>75 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 8.8 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">https://polyhaven.com/a/bitumen</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/bitumen" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/clean_asphalt" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/clean_asphalt" target="_blank" rel="noopener">Clean Asphalt</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · clean_asphalt</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.1 m × 2.1 m (page: “2.1m wide”)</dd>
+<dt>2K size</dt><dd>80 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 17 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/clean_asphalt" target="_blank" rel="noopener">https://polyhaven.com/a/clean_asphalt</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/clean_asphalt" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Color.jpg?70344&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Displacement.jpg?49532&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_NormalDX.jpg?42278&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Roughness.jpg?63811&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_AmbientOcclusion.jpg?78193" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="roofing_files/acg_Asphalt031.jpg" alt="Asphalt 031" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Asphalt031" target="_blank" rel="noopener">Asphalt 031</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Asphalt031</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given</dd>
+<dt>2K size</dt><dd>66 MB 2K-PNG zip · 31 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Asphalt031" target="_blank" rel="noopener">https://ambientcg.com/a/Asphalt031</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Color.jpg?70344&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Displacement.jpg?49532&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_NormalDX.jpg?42278&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_Roughness.jpg?63811&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Asphalt031/Asphalt031_SQ_AmbientOcclusion.jpg?78193" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article></div></div></div></section><section id="roofing_built_up_gravel_roof">
+<header class="rh"><span class="num">08</span><h2>Built-up gravel roof</h2><code class="key">roofing_built_up_gravel_roof</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_built_up_gravel_roof.jpg" alt="current look of Built-up gravel roof" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_built_up_gravel_roof.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">Gravel040 is loose grey crushed stone like a ballasted roof; tarred_gravel is gravel set in dark tar (the built-up surface where the gravel has worn thin); gravel_floor_02 is paler, finer gravel.</p><div class="pgrid"><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Color.jpg?37326&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Displacement.jpg?83089&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_NormalDX.jpg?84487&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Roughness.jpg?39260&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_AmbientOcclusion.jpg?72529" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="roofing_files/acg_Gravel040.jpg" alt="Gravel 040" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Gravel040" target="_blank" rel="noopener">Gravel 040</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Gravel040</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>not given</dd>
+<dt>2K size</dt><dd>69 MB 2K-PNG zip · 34 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Gravel040" target="_blank" rel="noopener">https://ambientcg.com/a/Gravel040</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Color.jpg?37326&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Displacement.jpg?83089&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_NormalDX.jpg?84487&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_Roughness.jpg?39260&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Gravel040/Gravel040_SQ_AmbientOcclusion.jpg?72529" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/tarred_gravel" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/tarred_gravel" target="_blank" rel="noopener">Tarred Gravel</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · tarred_gravel</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2.2 m × 2.2 m (page: “2.2m wide”)</dd>
+<dt>2K size</dt><dd>79 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 18 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/tarred_gravel" target="_blank" rel="noopener">https://polyhaven.com/a/tarred_gravel</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/tarred_gravel" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://polyhaven.com/a/gravel_floor_02" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/gravel_floor_02" target="_blank" rel="noopener">Gravel Floor 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · gravel_floor_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan) — credits list photography</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>2 m × 2 m (page: “2m wide”)</dd>
+<dt>2K size</dt><dd>85 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 22 MB as JPG</dd>
+<dt>Credit</dt><dd>Dimitrios Savva Photography; Jenelle van Heerden Processing</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/gravel_floor_02" target="_blank" rel="noopener">https://polyhaven.com/a/gravel_floor_02</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/gravel_floor_02" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article></div></div></div></section><section id="roofing_sod_green_roof">
+<header class="rh"><span class="num">09</span><h2>Sod / green roof</h2><code class="key">roofing_sod_green_roof</code></header>
+<div class="row">
+<figure class="cur"><img src="roofing_files/current_roofing_sod_green_roof.jpg" alt="current look of Sod / green roof" width="200" height="200">
+<figcaption><b>Now in the game</b><br><span class="g">code-drawn</span> · list: used by the grid<br>drawn by code: dino_game_rnd/surface_gen/gen_roofing_sod_green_roof.py<br><small>Thumbnail: the game&#x27;s drawn picture</small></figcaption></figure>
+<div class="ps"><p class="note"><span class="tag photo">PHOTO</span></p><p class="note">No photo of a planted green roof (sedum mat) in either library. These are real moss-over-soil photos with the same patchy green on dark earth: brown_mud_leaves_01 is closest; Moss001 is small low plants (45 cm across); forest_leaves_02 moss with brown litter. This look sits near the terrain-and-plants list; a moss ground there could be shared.</p><div class="pgrid"><article class="p">
+<a href="https://polyhaven.com/a/brown_mud_leaves_01" target="_blank" rel="noopener" title="Open in 3D: Poly Haven&#x27;s page (its 3D preview)"><span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/brown_mud_leaves_01" target="_blank" rel="noopener">Brown Mud Leaves 01</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · brown_mud_leaves_01</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>1.3 m × 1.3 m (page: “1.3m wide”)</dd>
+<dt>2K size</dt><dd>81 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 20 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/brown_mud_leaves_01" target="_blank" rel="noopener">https://polyhaven.com/a/brown_mud_leaves_01</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://polyhaven.com/a/brown_mud_leaves_01" target="_blank" rel="noopener">Poly Haven&#x27;s page (its 3D preview)</a></dd></dl></div></article><article class="p">
+<a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Color.jpg?86579&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Displacement.jpg?95570&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_NormalDX.jpg?5602&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Roughness.jpg?13300&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_AmbientOcclusion.jpg?6234" target="_blank" rel="noopener" title="Open in 3D: ambientCG&#x27;s 3D preview (pbr.one)"><img src="roofing_files/acg_Moss001.jpg" alt="Moss 001" width="160" height="160"></a>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://ambientcg.com/a/Moss001" target="_blank" rel="noopener">Moss 001</a></h4>
+<dl><dt>Library ID</dt><dd><code>ambientCG · Moss001</code></dd>
+<dt>Technique</dt><dd>Real photo — photogrammetry (page says “Surface Photogrammetry”)</dd>
+<dt>Licence</dt><dd>All assets are released under the Creative Commons CC0 license, making them free to use without attribution - even in commercial circumstances.</dd>
+<dt>Real size</dt><dd>ca. 45 cm × 45 cm (page)</dd>
+<dt>2K size</dt><dd>72 MB 2K-PNG zip · 38 MB 2K-JPG zip</dd>
+<dt>Credit</dt><dd>ambientCG</dd>
+<dt>Source</dt><dd><a href="https://ambientcg.com/a/Moss001" target="_blank" rel="noopener">https://ambientcg.com/a/Moss001</a></dd>
+<dt>3D</dt><dd>The picture opens <a href="https://releases.pbr.one/main/material-shading.html#normal_type=directx&amp;color_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Color.jpg?86579&amp;displacement_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Displacement.jpg?95570&amp;normal_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_NormalDX.jpg?5602&amp;roughness_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_Roughness.jpg?13300&amp;ambientocclusion_url=https://f003.backblazeb2.com/file/ambientCG-Web/media/surface-preview/Moss001/Moss001_SQ_AmbientOcclusion.jpg?6234" target="_blank" rel="noopener">ambientCG&#x27;s 3D preview (pbr.one)</a></dd></dl></div></article><article class="p">
+<span class="pub-out">Not copied here: Poly Haven’s previews are not CC0. Its Poly Haven page shows it ↗</span>
+<div class="pb"><span class="tag photo">REAL PHOTO</span>
+<h4><a href="https://polyhaven.com/a/forest_leaves_02" target="_blank" rel="noopener">Forest Leaves 02</a></h4>
+<dl><dt>Library ID</dt><dd><code>Poly Haven · forest_leaves_02</code></dd>
+<dt>Technique</dt><dd>Real photo (Poly Haven scan)</dd>
+<dt>Licence</dt><dd>CC0 License — CC0 1.0 Universal - public domain dedication, no attribution required</dd>
+<dt>Real size</dt><dd>3 m × 3 m (page: “3m tall”)</dd>
+<dt>2K size</dt><dd>35 MB as PNG (Diffuse + nor_gl + Rough + AO + arm, what a pull fetches) · 7.2 MB as JPG</dd>
+<dt>Credit</dt><dd>Rob Tuytel</dd>
+<dt>Source</dt><dd><a href="https://polyhaven.com/a/forest_leaves_02" target="_blank" rel="noopener">https://polyhaven.com/a/forest_leaves_02</a></dd>
+<dt>3D</dt><dd>The picture opens our 3D viewer — downloaded, not in the game yet (on the owner’s machine only)</dd></dl></div></article></div></div></div></section>
+<footer><p><b>How this was checked.</b> Prospects came from each library's full catalogue (Poly Haven: all textures; ambientCG: every material), chosen by eye from the thumbnails. The licence line was read from each prospect's own page, fetched again on 2026-10-16: every Poly Haven page shows “CC0 License” beside the author credit; every ambientCG page says “All assets are released under the Creative Commons CC0 license…”. A prospect whose page lacked the line would have been dropped. ambientCG's technique is copied from the page's <i>Technique</i> field (the site spells procedural “Prodedural”). Poly Haven pages have no technique field; its textures are scanned from real surfaces, and where credits name a photographer that is shown.</p>
+<p><b>Real size</b> is the area the photo covers. Poly Haven: the asset's own dimensions (its API), with the “… wide” figure its page prints. ambientCG: the page's <i>Dimensions</i> line; where the page gives none, the catalogue's figure, or “not given”. <b>2K size</b> is the download a pull would make: for Poly Haven the five 2K PNG maps <code>tools/surface_photos.py</code> fetches (colour, OpenGL normal, roughness, AO, ARM), with the JPG total beside it; for ambientCG the 2K-PNG zip that tool fetches, with the 2K-JPG zip beside it. Sizes are from the libraries' APIs; nothing was downloaded at full size.</p>
+<p>Thumbnails are the libraries' own small previews (256 px), stored beside this page in <code>roofing_files/</code>. Current-look thumbnails are 256 px copies of the game's colour picture.</p></footer>
+</main></body></html>
